@@ -1,0 +1,257 @@
+#+Title: The Computer Science Survival Guide - Taming Python
+#+Email: 
+#+Author: Mr Kelly -|- [[http://creativecommons.org/licenses/by-nc/4.0/][Creative Commons Attribution-NonCommercial License]]
+
+#+MACRO: NEWLINE @@latex:\\@@ @@html:<br>@@
+
+#+OPTIONS: html-postamble:nil html-scripts:nil html-style:nil num:nil 
+# HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
+
+# Slides CSS MIT License + JS GPL License
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
+
+
+#+HTML_HEAD_EXTRA:  <style>.keyword {color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
+#+HTML_HEAD_EXTRA:  <style>.note {font-size: 12pt; text-indent: 14pt; color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
+
+
+#+LATEX_HEADER: \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
+#+LATEX_HEADER: \newenvironment{keyword}{\color{red}}{\ignorespacesafterend}
+#+LATEX_HEADER: \newenvironment{note}{\color{blue}}{\ignorespacesafterend}
+
+* Computational Thinking
+#+BEGIN_keyword
+Computational thinking is the skill of converting a complex problem into many simple, solvable solutions.
+#+END_keyword
+- Thinking computationally is not programming! 
+- The answer a computer can provide is only as good as the question that is first asked of it.
+
+** Step1: Decomposition 
+- Firstly take the complex problem and break it down into finite states or actions.
+- Then take each of these individual smaller problems and check that they can not be broken down further.
+
+#+CAPTION: For example consider a vending machine (a complex problem)
+#+NAME: fig.Decomposition 
+#+ATTR_HTML: :width 70%
+file:img/decomposition.svg
+
+
+** Step2: Abstraction
+For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
+
+The vending machine abstracted
+- the user inserts <inputs> currency
+- the user makes <inputs> a selection from a menu or a refund
+- the machine [processes] if the user can afford the selected item
+- the machine calculates [processes] the change
+- the machine <outputs> the paid item and change
+
+** Step3: Algorithms
+#+BEGIN_keyword
+An algorithm is a simple set of steps to solve a problem.
+#+END_keyword
+
+- Algorithims are the final result of computational thinking.
+- For each of the individual problems provide simple step by step solutions. 
+
+Almost all problems simplify into three stages: 
+  + Input   : enter values/entities (nouns) 
+  + Process : do a calculation or decision (verbs)
+  + Output  : print answer to the screen/file (nouns)
+
+
+#+CAPTION: Algorithms are written as pseudocode and flowcharts. 
+#+NAME: fig.Algorithm
+#+ATTR_HTML: :width 80%
+file:img/algorithim.svg
+
+** What is Programming/Coding
+- Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.  
+- To run an algorithim on a computer it needs to be coded into very explicit binary instructions like 11100110.
+- Fortunately we no longer program computers directly in binary/hex/assembly but use a higher (simpler) programming language like python.  
+
+* Python
+- Python is a high level English like programming language
+- look at the following python example :
+
+#+BEGIN_SRC python -i
+print("hello world")
+#+END_SRC
+
+- When the Python code above is run/executed it is interpreted one line at a time into bytecode instructions that the computer can understand.
+
+** Syntax    
+Computer Languages [Python] have rules just like human Languages. For example in English a sentence ends in a full stop and starts with a capital letter.
+
+#+BEGIN_keyword
+Syntax: The rules of a language
+#+END_keyword 
+
+*** Comments
+Comments are notes added to code to remind programmers what a piece of code does.
+In python a hash character # will begin a comment that extends to the end of the line.
+
+#+BEGIN_SRC python -i
+# this is a comment ignored by the interpreter
+print("this is code")  # this is also a comment
+#+END_SRC
+
+#+BEGIN_keyword
+Comments are notes for humans ignored by the interpreter
+#+END_keyword
+
+*** Variables
+Variables are a way of labelling data that is going to used in a our code.
+#+BEGIN_SRC python -i
+name = "Mr Kelly"
+#+END_SRC
+
+#+BEGIN_keyword
+A variable is a named value that can be changed
+#+END_keyword
+
+#+BEGIN_note
+Variable names should always relate to the data they hold, they can’t start with a number or contain spaces (use under_scores or CamelCase instead).
+#+END_note
+
+
+*** Operators
+Operators are symbols that change the value of a variable :
+
+| Symbol         | Operation                                                        |
+|----------------+------------------------------------------------------------------|
+| =              | Assign the variable on the left the value of the right |
+| +              | add                                                    |
+| -              | subtract                                               |
+| *              | multiply                                               |
+| @@html:&#47;@@ @@latex:&frasl;@@  | divide                                                 |
+| //             | integer division                                       |
+| %              | Modulus                                                |
+
+
+#+BEGIN_SRC python -i
+# This code sets the variable answer to the value of variable1 plus 2
+answer = variable1 + 2
+#+END_SRC
+
+*** Data Types
+A data type describes how data within a variable is stored.
+- A python variable can store the following types : 
+| Type    | Definition                             | Literal       |   
+|---------+----------------------------------------+---------------|   
+| integer | Whole Number                           | 1             |   
+| float   | Decimal Number                         | 1.0           |   
+| boolean | A value that can only be TRUE or FALSE | True or False |   
+| string  | Strings are variables that hold "Text" | "Text"        |   
+
+
+#+BEGIN_note  
+"String": Literals are always inside ""
+to tell the computer that this is 
+"TEXT" not code like
+print()
+#+END_note
+
+*** Type Conversion/Casting
+When using operators we frequently need to cast variables into compatible types.
+
+#+BEGIN_SRC python -i
+# This code has a Type Error 
+# python can't add strings(text) and intergers(numbers) together.
+print( 99 + " Years old" ) 
+answer = input("Please enter a number : " ) + 1 
+#+END_SRC
+
+| Function    | Conversion        | Output  |
+|-------------+-------------------+---------|
+| float(“99”) | string -> float   | 99.0    |
+| int(“99”)   | string -> integer | 99      |
+| str(99)     | number -> string  | “99” |
+#+TBLFM: $3=99.0
+
+#+BEGIN_SRC python -i
+# However Python can add strings(text) with strings(text)
+print( str(99) + " Years old" ) 
+
+# Python can also add intergers(numbers) with intergers(numbers) 
+answer = int( input( "Please enter a number : " ) ) + 1 
+#+END_SRC
+  
+
+*** Functions
+#+BEGIN_keyword 
+Functions are named commands() that may take inputs and/or return an output
+#+END_keyword
+
+#+BEGIN_note
+Functions: always have brackets() after their names 
+#+END_note
+
+Two common functions used in python are print and input:
+#+BEGIN_SRC python -i
+name = input("Please enter your name : ")
+print("hello ", name)
+#+END_SRC
+- input( "Question ?" )
+  + Takes a string to display
+  + captures the users keystrokes until the enter key is pressed
+  + then returns what the user has typed
+
+- print( "OUTPUT" )
+  + takes a "string" and displays it on the screen
+*** Defining New Functions
+You can also define your own functions using the template below, to save typing out code more than once.
+
+#+BEGIN_SRC python -i
+def function_name(input_variable):
+    """ Comment describing what the function does """
+    [CODEBLOCK]
+    return output_variable
+#+END_SRC
+
+*** Codeblocks / Indentation
+....
+
+*** Syntax Errors
+Breaking the rules of any language for example incorrect spelling, punctuation or grammar will cause misunderstanding. Python is no exception and will fail to interpret/understand the code you have entered.Syntax Errors are very common (mostly typos) but fortunately they are also easy to find and fix.
+- When python is unable to understand your code it will do its best to highlight the syntax error.
+[[file:img/syntax_error.jpg]]
+- The example python code above contains multiple errors.
+  + print is misspelt Pr0nt (note python is case sensitive)
+  + the string "Syntax is missing a double quote   
+  + the print function is missing a closing bracket 
+
+  
+
+** Logic
+Frequently an algorithm needs to make a decision; that is run code only if a condition is meet (True).
+
+Weather
+hot
+cold
+wet 
+
+if expression1:
+   statement(s)
+elif expression2:
+   statement(s)
+elif expression3:
+   statement(s)
+else:
+   statement(s)
+
+If the condition is true, then do the indented statements. 
+If the condition is not true, then skip the indented statements.
+
+
+*** Comparison Operators
+Symbols that compare variables :
+| Symbol | Operation              |
+|--------+------------------------|
+| ==  | Is equal too              |
+| !=  | Is not equal too          |
+| <=  | Less than or equal too    |
+| >=  | Greater than or equal too |
+| and | TRUE and FALSE = FALSE    |
+| or  | TRUE or  FALSE = TRUE     |
