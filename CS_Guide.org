@@ -8,8 +8,8 @@
 # HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
 
 # Slides CSS MIT License + JS GPL License
-#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
-#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
+# +INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+# +HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
 
 
 #+HTML_HEAD_EXTRA:  <style>.keyword {color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
@@ -35,7 +35,6 @@ Computational thinking is the skill of converting a complex problem into many si
 #+NAME: fig.Decomposition 
 #+ATTR_HTML: :width 70%
 file:img/decomposition.svg
-
 
 ** Step2: Abstraction
 For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
@@ -69,7 +68,7 @@ file:img/algorithim.svg
 ** What is Programming/Coding
 - Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.  
 - To run an algorithim on a computer it needs to be coded into very explicit binary instructions like 11100110.
-- Fortunately we no longer program computers directly in binary/hex/assembly but use a higher (simpler) programming language like python.  
+- Fortunately we no longer program computers directly in binary but use a simpler (higher) programming language like python.  
 
 * Python
 - Python is a high level English like programming language
@@ -225,7 +224,16 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
   
 
 ** Logic
-Frequently an algorithm needs to make a decision; that is run code only if a condition is meet (True).
+Frequently an algorithm needs to make a decision; that is selectivly run code only if a condition is meet (True).
+#+CAPTION: if, else if (elif) and else
+#+NAME: fig.Decomposition 
+#+ATTR_HTML: :width 70%
+file:img/if.svg
+
+
+
+
+
 
 Weather
 hot

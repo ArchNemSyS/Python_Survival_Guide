@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/PR-SVG-20010719/DTD/svg10.dtd">
+<svg width="43cm" height="23cm" viewBox="118 358 846 444" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke-dasharray: 20; stroke: #000000" x="120" y="360" width="520" height="440"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="129" y="583.9">
+      <tspan x="129" y="583.9"></tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="440.813,400 521.626,440.407 440.813,480.813 360,440.407 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="440.813,400 521.626,440.407 440.813,480.813 360,440.407 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="440.813" y="444.307">
+      <tspan x="440.813" y="444.307">if expression</tspan>
+    </text>
+  </g>
+  <g>
+    <polygon style="fill: #ffffff" points="660,360 951.25,360 963.25,372 963.25,801.333 660,801.333 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="660,360 951.25,360 963.25,372 963.25,801.333 660,801.333 "/>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 1; stroke: #000000" points="951.25,360 951.25,372 963.25,372 "/>
+    <text font-size="13.5467" style="fill: #000000;text-anchor:start;font-family:monospace;font-style:normal;font-weight:normal" x="667" y="385.6">
+      <tspan x="667" y="385.6">Pseudocode</tspan>
+      <tspan x="667" y="402.533"></tspan>
+      <tspan x="667" y="419.467"></tspan>
+      <tspan x="667" y="436.4">if expression is true:</tspan>
+      <tspan x="667" y="453.333">-&gt;|  run this indented codeblock</tspan>
+      <tspan x="667" y="470.267">-&gt;|  otherwise skip</tspan>
+      <tspan x="667" y="487.2"></tspan>
+      <tspan x="667" y="504.133"></tspan>
+      <tspan x="667" y="521.067"></tspan>
+      <tspan x="667" y="538">else if expression is true:</tspan>
+      <tspan x="667" y="554.933">-&gt;|  run this indented codeblock </tspan>
+      <tspan x="667" y="571.867">-&gt;|  otherwise skip</tspan>
+      <tspan x="667" y="588.8"></tspan>
+      <tspan x="667" y="605.733"></tspan>
+      <tspan x="667" y="622.667"></tspan>
+      <tspan x="667" y="639.6">else:</tspan>
+      <tspan x="667" y="656.533">-&gt;|  run this indented codeblock</tspan>
+      <tspan x="667" y="673.467">-&gt;|  when all previous expressions </tspan>
+      <tspan x="667" y="690.4">-&gt;|  are false </tspan>
+      <tspan x="667" y="707.333"></tspan>
+      <tspan x="667" y="724.267"></tspan>
+      <tspan x="667" y="741.2"></tspan>
+      <tspan x="667" y="758.133"></tspan>
+      <tspan x="667" y="775.067"></tspan>
+      <tspan x="667" y="792"></tspan>
+    </text>
+  </g>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="440" y1="380" x2="440.418" y2="390.272"/>
+    <polygon style="fill: #000000" points="440.722,397.766 435.32,387.977 440.418,390.272 445.312,387.571 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="440.722,397.766 435.32,387.977 440.418,390.272 445.312,387.571 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="480" y="500" width="139.8" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="480" y="500" width="139.8" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="549.9" y="522.9">
+      <tspan x="549.9" y="522.9">run this codeblock</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="521.626,440.407 521.626,440 549.9,440 549.9,490.264 "/>
+    <polygon style="fill: #000000" points="549.9,497.764 544.9,487.764 549.9,490.264 554.9,487.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="549.9,497.764 544.9,487.764 549.9,490.264 554.9,487.764 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="500" y="420">
+    <tspan x="500" y="420">True</tspan>
+  </text>
+  <g>
+    <polygon style="fill: #ffffff" points="332.237,503.998 430.188,540.141 332.237,576.283 234.286,540.141 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="332.237,503.998 430.188,540.141 332.237,576.283 234.286,540.141 "/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="332.237" y="544.041">
+      <tspan x="332.237" y="544.041">elif expression</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="360,440.407 360,440 332.237,440 332.237,494.262 "/>
+    <polygon style="fill: #000000" points="332.237,501.762 327.237,491.762 332.237,494.262 337.237,491.762 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="332.237,501.762 327.237,491.762 332.237,494.262 337.237,491.762 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="360" y="420">
+    <tspan x="360" y="420">False</tspan>
+  </text>
+  <ellipse style="fill: #000000" cx="450" cy="750" rx="10" ry="10"/>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="549.9,538 549.9,750 469.736,750 "/>
+    <polygon style="fill: #000000" points="462.236,750 472.236,745 469.736,750 472.236,755 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="462.236,750 472.236,745 469.736,750 472.236,755 "/>
+  </g>
+  <g>
+    <rect style="fill: #ffffff" x="380" y="660" width="139.8" height="38"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="380" y="660" width="139.8" height="38"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="449.9" y="682.9">
+      <tspan x="449.9" y="682.9">run this codeblock</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="430.188,540.141 430.188,540 449.9,540 449.9,650.264 "/>
+    <polygon style="fill: #000000" points="449.9,657.764 444.9,647.764 449.9,650.264 454.9,647.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="449.9,657.764 444.9,647.764 449.9,650.264 454.9,647.764 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="400" y="520">
+    <tspan x="400" y="520">True</tspan>
+  </text>
+  <g>
+    <line style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x1="449.9" y1="698" x2="449.977" y2="730.264"/>
+    <polygon style="fill: #000000" points="449.995,737.764 444.971,727.776 449.977,730.264 454.971,727.752 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="449.995,737.764 444.971,727.776 449.977,730.264 454.971,727.752 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="220" y="520">
+    <tspan x="220" y="520">False</tspan>
+  </text>
+  <g>
+    <rect style="fill: #ffffff" x="140" y="660" width="169.85" height="60"/>
+    <rect style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" x="140" y="660" width="169.85" height="60"/>
+    <text font-size="12.7998" style="fill: #000000;text-anchor:middle;font-family:sans-serif;font-style:normal;font-weight:normal" x="224.925" y="685.9">
+      <tspan x="224.925" y="685.9">else </tspan>
+      <tspan x="224.925" y="701.9">run this codeblock</tspan>
+    </text>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="234.286,540.141 234.286,540 224.925,540 224.925,650.264 "/>
+    <polygon style="fill: #000000" points="224.925,657.764 219.925,647.764 224.925,650.264 229.925,647.764 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.925,657.764 219.925,647.764 224.925,650.264 229.925,647.764 "/>
+  </g>
+  <g>
+    <polyline style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="224.925,720 224.925,750 430.264,750 "/>
+    <polygon style="fill: #000000" points="437.764,750 427.764,755 430.264,750 427.764,745 "/>
+    <polygon style="fill: none; fill-opacity:0; stroke-width: 2; stroke: #000000" points="437.764,750 427.764,755 430.264,750 427.764,745 "/>
+  </g>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="811.625" y="580.667">
+    <tspan x="811.625" y="580.667"></tspan>
+  </text>
+  <text font-size="12.7998" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="811.625" y="580.667">
+    <tspan x="811.625" y="580.667"></tspan>
+  </text>
+  <text font-size="13.5467" style="fill: #000000;text-anchor:start;font-family:sans-serif;font-style:normal;font-weight:normal" x="140" y="385">
+    <tspan x="140" y="385">Flowchart</tspan>
+  </text>
+</svg>
