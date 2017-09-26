@@ -4,12 +4,12 @@
 
 #+MACRO: NEWLINE @@latex:\\@@ @@html:<br>@@
 
-#+OPTIONS: html-postamble:nil html-scripts:nil html-style:nil num:nil 
+#+OPTIONS: html-postamble:nil html-scripts:nil html-style:nil num:nil ^:nil
 # HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/readtheorg.css"/>
 
 # Slides CSS MIT License + JS GPL License
-# +INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
-# +HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
+#+INFOJS_OPT: view:t toc:t ltoc:t mouse:underline buttons:0 path:http://thomasf.github.io/solarized-css/org-info.min.js
+#+HTML_HEAD: <link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
 
 
 #+HTML_HEAD_EXTRA:  <style>.keyword {color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
@@ -36,7 +36,21 @@ Computational thinking is the skill of converting a complex problem into many si
 #+ATTR_HTML: :width 70%
 file:img/decomposition.svg
 
-** Step2: Abstraction
+** Step2: Pattern Recognition
+Once we have decomposed complex problems we often find  find patterns among the smaller problems we create. 
+The patterns are similarities or characteristics that some of the problems share.   
+
+We look for:
+- Problems that repeat/loop
+- Objects that have similar characteristics
+
+Referring back to the vending machine example:
+- inserting the money and displaying a balance would likely loop.
+- items for sale in the vending machine would likely have a cost and description but others be treated similarly.
+
+Finding these patterns allows us to better abstract like elements from the complex problem and solve it more efficiently.  
+
+** Step3: Abstraction
 For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
 
 The vending machine abstracted
@@ -46,7 +60,7 @@ The vending machine abstracted
 - the machine calculates [processes] the change
 - the machine <outputs> the paid item and change
 
-** Step3: Algorithms
+** Step4: Algorithms
 #+BEGIN_keyword
 An algorithm is a simple set of steps to solve a problem.
 #+END_keyword
@@ -64,6 +78,12 @@ Almost all problems simplify into three stages:
 #+NAME: fig.Algorithm
 #+ATTR_HTML: :width 80%
 file:img/algorithim.svg
+
+*** Flowchart Shapes
+#+CAPTION: Flowchart Shapes. 
+#+NAME: fig.flowchart shapes
+#+ATTR_HTML: :width 80%
+[[file:img/REPLACEME.png]]
 
 ** What is Programming/Coding
 - Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.  
@@ -100,6 +120,10 @@ print("this is code")  # this is also a comment
 Comments are notes for humans ignored by the interpreter
 #+END_keyword
 
+#+BEGIN_note
+Comments: Always begin with a #
+#+END_note
+
 *** Variables
 Variables are a way of labelling data that is going to used in a our code.
 #+BEGIN_SRC python -i
@@ -111,9 +135,13 @@ A variable is a named value that can be changed
 #+END_keyword
 
 #+BEGIN_note
-Variable names should always relate to the data they hold, they can’t start with a number or contain spaces (use under_scores or CamelCase instead).
+- Variable names should always relate to the data they hold
+- Variable names can’t start with a number or contain spaces (use under_scores or CamelCase instead).
 #+END_note
 
+#+BEGIN_note
+Variables = are always set after they are named
+#+END_note
 
 *** Operators
 Operators are symbols that change the value of a variable :
@@ -146,7 +174,7 @@ A data type describes how data within a variable is stored.
 
 
 #+BEGIN_note  
-"String": Literals are always inside ""
+"String": Literals are always inside "quotes"
 to tell the computer that this is 
 "TEXT" not code like
 print()
@@ -199,6 +227,22 @@ print("hello ", name)
 
 - print( "OUTPUT" )
   + takes a "string" and displays it on the screen
+
+*** Codeblocks / Indentation
+In many high level languages brackets are used to segment code execution into blocks.
+#+BEGIN_SRC c++
+int add(int x, int y)
+{ // start a block
+    return x + y;
+} // end a block
+#+END_SRC
+Python separates code-blocks purely on indentation alone as follows :
+#+BEGIN_SRC python -i
+def add(x,y):
+    """ As the following line is indented it belongs to the function add """
+    Ans = x + y
+    return Ans
+#+END_SRC
 *** Defining New Functions
 You can also define your own functions using the template below, to save typing out code more than once.
 
@@ -208,9 +252,6 @@ def function_name(input_variable):
     [CODEBLOCK]
     return output_variable
 #+END_SRC
-
-*** Codeblocks / Indentation
-....
 
 *** Syntax Errors
 Breaking the rules of any language for example incorrect spelling, punctuation or grammar will cause misunderstanding. Python is no exception and will fail to interpret/understand the code you have entered.Syntax Errors are very common (mostly typos) but fortunately they are also easy to find and fix.
@@ -222,35 +263,43 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
   + the print function is missing a closing bracket 
 
   
+*** Syntax Table
+
+| Syntax Table            |                                                                |
+|-------------------------+----------------------------------------------------------------|
+| #              Comment# | Text for humans ignored by the computer                        |
+| Variable=               | A named value that can be changed                              |
+| “String”                | A variable that holds "Text"                                   |
+| Function( inputs )      | A named command() that may take inputs and/or return an output |
+| Operators               | + - * / > <                                                    |
+
 
 ** Logic
-Frequently an algorithm needs to make a decision; that is selectivly run code only if a condition is meet (True).
+Frequently an algorithm needs to make a decision; that is selectively run code only if a condition is meet (True).
 #+CAPTION: if, else if (elif) and else
 #+NAME: fig.Decomposition 
 #+ATTR_HTML: :width 70%
 file:img/if.svg
 
 
-
-
-
-
-Weather
-hot
-cold
-wet 
-
-if expression1:
-   statement(s)
-elif expression2:
-   statement(s)
-elif expression3:
-   statement(s)
+For example in dressing for according to the weather in python :
+#+BEGIN_SRC python -i
+if weather == "Cold":
+    print("Wear a jumper and long trousers")
 else:
-   statement(s)
-
-If the condition is true, then do the indented statements. 
-If the condition is not true, then skip the indented statements.
+    # warm
+    print("Wear shorts")
+if weather == "Wet":
+    if weather == "Windy":
+        # wet and windy
+        print("Take Raincoat")
+    else:
+    # just wet
+    print("Take Umbrella")
+#+END_SRC
+#+BEGIN_note
+Note the double ==
+#+END_note
 
 
 *** Comparison Operators

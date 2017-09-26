@@ -1,0 +1,831 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-09-26 Tue 20:31 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>The Computer Science Survival Guide - Taming Python</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="Mr Kelly -|- [[http://creativecommons.org/licenses/by-nc/4.0/][Creative Commons Attribution-NonCommercial License]]Creative Commons Attribution-NonCommercial License" />
+<link rel="stylesheet" type="text/css" href="css/solarized-light.css" />
+<style>.keyword {color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
+<style>.note {font-size: 12pt; text-indent: 14pt; color:#002b36; text-align: center; background-color:#fdf6e3; border-style: dashed;}</style>
+<script type="text/javascript" src="http://thomasf.github.io/solarized-css/org-info.min.js">
+/**
+ *
+ * @source: http://thomasf.github.io/solarized-css/org-info.min.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://thomasf.github.io/solarized-css/org-info.min.js.
+ *
+ * Copyright (C) 2012-2017 Free Software Foundation, Inc.
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://thomasf.github.io/solarized-css/org-info.min.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2017 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "1");
+org_html_manager.set("VIEW", "1");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">The Computer Science Survival Guide - Taming Python</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#org6cdf9e5">Computational Thinking</a>
+<ul>
+<li><a href="#orga7ac958">Step1: Decomposition</a></li>
+<li><a href="#orgfaf7a5d">Step2: Pattern Recognition</a></li>
+<li><a href="#orgc90501d">Step3: Abstraction</a></li>
+<li><a href="#org8538ed3">Step4: Algorithms</a>
+<ul>
+<li><a href="#orgfd37867">Flowchart Shapes</a></li>
+</ul>
+</li>
+<li><a href="#orgc2e2e03">What is Programming/Coding</a></li>
+</ul>
+</li>
+<li><a href="#org76ffb39">Python</a>
+<ul>
+<li><a href="#org9e56b0f">Syntax</a>
+<ul>
+<li><a href="#org8bed7ef">Comments</a></li>
+<li><a href="#orgdb3ca79">Variables</a></li>
+<li><a href="#org20f9775">Operators</a></li>
+<li><a href="#org3678d71">Data Types</a></li>
+<li><a href="#org3e5384e">Type Conversion/Casting</a></li>
+<li><a href="#org058186f">Functions</a></li>
+<li><a href="#orge08e3e8">Codeblocks / Indentation</a></li>
+<li><a href="#orgc94ce81">Defining New Functions</a></li>
+<li><a href="#orgc4b661f">Syntax Errors</a></li>
+<li><a href="#org48bf6f0">Syntax Table</a></li>
+</ul>
+</li>
+<li><a href="#org47b1025">Logic</a>
+<ul>
+<li><a href="#org7bf375c">Comparison Operators</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org6cdf9e5" class="outline-2">
+<h2 id="org6cdf9e5">Computational Thinking</h2>
+<div class="outline-text-2" id="text-org6cdf9e5">
+<div class="keyword">
+<p>
+Computational thinking is the skill of converting a complex problem into many simple, solvable solutions.
+</p>
+
+</div>
+<ul class="org-ul">
+<li>Thinking computationally is not programming!</li>
+<li>The answer a computer can provide is only as good as the question that is first asked of it.</li>
+</ul>
+</div>
+
+<div id="outline-container-orga7ac958" class="outline-3">
+<h3 id="orga7ac958">Step1: Decomposition</h3>
+<div class="outline-text-3" id="text-orga7ac958">
+<ul class="org-ul">
+<li>Firstly take the complex problem and break it down into finite states or actions.</li>
+<li>Then take each of these individual smaller problems and check that they can not be broken down further.</li>
+</ul>
+
+
+<div id="org65bb26f" class="figure">
+<p><object type="image/svg+xml" data="img/decomposition.svg" class="org-svg" width="70%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 1: </span>For example consider a vending machine (a complex problem)</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgfaf7a5d" class="outline-3">
+<h3 id="orgfaf7a5d">Step2: Pattern Recognition</h3>
+<div class="outline-text-3" id="text-orgfaf7a5d">
+<p>
+Once we have decomposed complex problems we often find  find patterns among the smaller problems we create. 
+The patterns are similarities or characteristics that some of the problems share.   
+</p>
+
+<p>
+We look for:
+</p>
+<ul class="org-ul">
+<li>Problems that repeat/loop</li>
+<li>Objects that have similar characteristics</li>
+</ul>
+
+<p>
+Referring back to the vending machine example:
+</p>
+<ul class="org-ul">
+<li>inserting the money and displaying a balance would likely loop.</li>
+<li>items for sale in the vending machine would likely have a cost and description but others be treated similarly.</li>
+</ul>
+
+<p>
+Finding these patterns allows us to better abstract like elements from the complex problem and solve it more efficiently.  
+</p>
+</div>
+</div>
+
+<div id="outline-container-orgc90501d" class="outline-3">
+<h3 id="orgc90501d">Step3: Abstraction</h3>
+<div class="outline-text-3" id="text-orgc90501d">
+<p>
+For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
+</p>
+
+<p>
+The vending machine abstracted
+</p>
+<ul class="org-ul">
+<li>the user inserts &lt;inputs&gt; currency</li>
+<li>the user makes &lt;inputs&gt; a selection from a menu or a refund</li>
+<li>the machine [processes] if the user can afford the selected item</li>
+<li>the machine calculates [processes] the change</li>
+<li>the machine &lt;outputs&gt; the paid item and change</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org8538ed3" class="outline-3">
+<h3 id="org8538ed3">Step4: Algorithms</h3>
+<div class="outline-text-3" id="text-org8538ed3">
+<div class="keyword">
+<p>
+An algorithm is a simple set of steps to solve a problem.
+</p>
+
+</div>
+
+<ul class="org-ul">
+<li>Algorithims are the final result of computational thinking.</li>
+<li>For each of the individual problems provide simple step by step solutions.</li>
+</ul>
+
+<p>
+Almost all problems simplify into three stages: 
+</p>
+<ul class="org-ul">
+<li>Input   : enter values/entities (nouns)</li>
+<li>Process : do a calculation or decision (verbs)</li>
+<li>Output  : print answer to the screen/file (nouns)</li>
+</ul>
+
+
+
+<div id="org7e5ec61" class="figure">
+<p><object type="image/svg+xml" data="img/algorithim.svg" class="org-svg" width="80%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 2: </span>Algorithms are written as pseudocode and flowcharts.</p>
+</div>
+</div>
+
+<div id="outline-container-orgfd37867" class="outline-4">
+<h4 id="orgfd37867">Flowchart Shapes</h4>
+<div class="outline-text-4" id="text-orgfd37867">
+
+<div id="org7bce696" class="figure">
+<p><img src="img/REPLACEME.png" alt="REPLACEME.png" width="80%" />
+</p>
+<p><span class="figure-number">Figure 3: </span>Flowchart Shapes.</p>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc2e2e03" class="outline-3">
+<h3 id="orgc2e2e03">What is Programming/Coding</h3>
+<div class="outline-text-3" id="text-orgc2e2e03">
+<ul class="org-ul">
+<li>Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.</li>
+<li>To run an algorithim on a computer it needs to be coded into very explicit binary instructions like 11100110.</li>
+<li>Fortunately we no longer program computers directly in binary but use a simpler (higher) programming language like python.</li>
+</ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org76ffb39" class="outline-2">
+<h2 id="org76ffb39">Python</h2>
+<div class="outline-text-2" id="text-org76ffb39">
+<ul class="org-ul">
+<li>Python is a high level English like programming language</li>
+<li>look at the following python example :</li>
+</ul>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"hello world"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>When the Python code above is run/executed it is interpreted one line at a time into bytecode instructions that the computer can understand.</li>
+</ul>
+</div>
+
+<div id="outline-container-org9e56b0f" class="outline-3">
+<h3 id="org9e56b0f">Syntax</h3>
+<div class="outline-text-3" id="text-org9e56b0f">
+<p>
+Computer Languages [Python] have rules just like human Languages. For example in English a sentence ends in a full stop and starts with a capital letter.
+</p>
+
+<div class="keyword">
+<p>
+Syntax: The rules of a language
+</p>
+
+</div>
+</div>
+
+<div id="outline-container-org8bed7ef" class="outline-4">
+<h4 id="org8bed7ef">Comments</h4>
+<div class="outline-text-4" id="text-org8bed7ef">
+<p>
+Comments are notes added to code to remind programmers what a piece of code does.
+In python a hash character # will begin a comment that extends to the end of the line.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">this is a comment ignored by the interpreter</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"this is code"</span><span style="color: #4f97d7;">)</span>  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">this is also a comment</span>
+</pre>
+</div>
+
+<div class="keyword">
+<p>
+Comments are notes for humans ignored by the interpreter
+</p>
+
+</div>
+
+<div class="note">
+<p>
+Comments: Always begin with a #
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgdb3ca79" class="outline-4">
+<h4 id="orgdb3ca79">Variables</h4>
+<div class="outline-text-4" id="text-orgdb3ca79">
+<p>
+Variables are a way of labelling data that is going to used in a our code.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"Mr Kelly"</span>
+</pre>
+</div>
+
+<div class="keyword">
+<p>
+A variable is a named value that can be changed
+</p>
+
+</div>
+
+<div class="note">
+<ul class="org-ul">
+<li>Variable names should always relate to the data they hold</li>
+<li>Variable names can’t start with a number or contain spaces (use under_scores or CamelCase instead).</li>
+</ul>
+
+</div>
+
+<div class="note">
+<p>
+Variables = are always set after they are named
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org20f9775" class="outline-4">
+<h4 id="org20f9775">Operators</h4>
+<div class="outline-text-4" id="text-org20f9775">
+<p>
+Operators are symbols that change the value of a variable :
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Symbol</th>
+<th scope="col" class="org-left">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">=</td>
+<td class="org-left">Assign the variable on the left the value of the right</td>
+</tr>
+
+<tr>
+<td class="org-left">+</td>
+<td class="org-left">add</td>
+</tr>
+
+<tr>
+<td class="org-left">-</td>
+<td class="org-left">subtract</td>
+</tr>
+
+<tr>
+<td class="org-left">*</td>
+<td class="org-left">multiply</td>
+</tr>
+
+<tr>
+<td class="org-left">&#47; </td>
+<td class="org-left">divide</td>
+</tr>
+
+<tr>
+<td class="org-left">//</td>
+<td class="org-left">integer division</td>
+</tr>
+
+<tr>
+<td class="org-left">%</td>
+<td class="org-left">Modulus</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This code sets the variable answer to the value of variable1 plus 2</span>
+<span style="color: #7590db;">answer</span> = variable1 + <span style="color: #a45bad;">2</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3678d71" class="outline-4">
+<h4 id="org3678d71">Data Types</h4>
+<div class="outline-text-4" id="text-org3678d71">
+<p>
+A data type describes how data within a variable is stored.
+</p>
+<ul class="org-ul">
+<li>A python variable can store the following types :</li>
+</ul>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Type</th>
+<th scope="col" class="org-left">Definition</th>
+<th scope="col" class="org-left">Literal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">integer</td>
+<td class="org-left">Whole Number</td>
+<td class="org-left">1</td>
+</tr>
+
+<tr>
+<td class="org-left">float</td>
+<td class="org-left">Decimal Number</td>
+<td class="org-left">1.0</td>
+</tr>
+
+<tr>
+<td class="org-left">boolean</td>
+<td class="org-left">A value that can only be TRUE or FALSE</td>
+<td class="org-left">True or False</td>
+</tr>
+
+<tr>
+<td class="org-left">string</td>
+<td class="org-left">Strings are variables that hold "Text"</td>
+<td class="org-left">"Text"</td>
+</tr>
+</tbody>
+</table>
+
+
+<div class="note">
+<p>
+"String": Literals are always inside "quotes"
+to tell the computer that this is 
+"TEXT" not code like
+print()
+</p>
+
+</div>
+</div>
+</div>
+
+<div id="outline-container-org3e5384e" class="outline-4">
+<h4 id="org3e5384e">Type Conversion/Casting</h4>
+<div class="outline-text-4" id="text-org3e5384e">
+<p>
+When using operators we frequently need to cast variables into compatible types.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This code has a Type Error </span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">python can't add strings(text) and intergers(numbers) together.</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span> <span style="color: #a45bad;">99</span> + <span style="color: #2d9574;">" Years old"</span> <span style="color: #4f97d7;">)</span> 
+<span style="color: #7590db;">answer</span> = <span style="color: #4f97d7;">input</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Please enter a number : "</span> <span style="color: #4f97d7;">)</span> + <span style="color: #a45bad;">1</span> 
+</pre>
+</div>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Function</th>
+<th scope="col" class="org-left">Conversion</th>
+<th scope="col" class="org-right">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">float(“99”)</td>
+<td class="org-left">string -&gt; float</td>
+<td class="org-right">99.0</td>
+</tr>
+
+<tr>
+<td class="org-left">int(“99”)</td>
+<td class="org-left">string -&gt; integer</td>
+<td class="org-right">99</td>
+</tr>
+
+<tr>
+<td class="org-left">str(99)</td>
+<td class="org-left">number -&gt; string</td>
+<td class="org-right">“99”</td>
+</tr>
+</tbody>
+</table>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">However Python can add strings(text) with strings(text)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span> <span style="color: #4f97d7;">str</span><span style="color: #bc6ec5;">(</span><span style="color: #a45bad;">99</span><span style="color: #bc6ec5;">)</span> + <span style="color: #2d9574;">" Years old"</span> <span style="color: #4f97d7;">)</span> 
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Python can also add intergers(numbers) with intergers(numbers) </span>
+<span style="color: #7590db;">answer</span> = <span style="color: #4f97d7;">int</span><span style="color: #4f97d7;">(</span> <span style="color: #4f97d7;">input</span><span style="color: #bc6ec5;">(</span> <span style="color: #2d9574;">"Please enter a number : "</span> <span style="color: #bc6ec5;">)</span> <span style="color: #4f97d7;">)</span> + <span style="color: #a45bad;">1</span> 
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org058186f" class="outline-4">
+<h4 id="org058186f">Functions</h4>
+<div class="outline-text-4" id="text-org058186f">
+<div class="keyword">
+<p>
+Functions are named commands() that may take inputs and/or return an output
+</p>
+
+</div>
+
+<div class="note">
+<p>
+Functions: always have brackets() after their names 
+</p>
+
+</div>
+
+<p>
+Two common functions used in python are print and input:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #4f97d7;">input</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Please enter your name : "</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"hello "</span>, name<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>input( "Question ?" )
+<ul class="org-ul">
+<li>Takes a string to display</li>
+<li>captures the users keystrokes until the enter key is pressed</li>
+<li>then returns what the user has typed</li>
+</ul></li>
+
+<li>print( "OUTPUT" )
+<ul class="org-ul">
+<li>takes a "string" and displays it on the screen</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orge08e3e8" class="outline-4">
+<h4 id="orge08e3e8">Codeblocks / Indentation</h4>
+<div class="outline-text-4" id="text-orge08e3e8">
+<p>
+In many high level languages brackets are used to segment code execution into blocks.
+</p>
+<div class="org-src-container">
+<pre class="src src-c++"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">add</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">x</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">y</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7;">{</span> <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">start a block</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> x + y;
+<span style="color: #4f97d7;">}</span> <span style="color: #2aa1ae; background-color: #292e34;">// </span><span style="color: #2aa1ae; background-color: #292e34;">end a block</span>
+</pre>
+</div>
+<p>
+Python separates code-blocks purely on indentation alone as follows :
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span><span style="color: #4f97d7;">(</span>x,y<span style="color: #4f97d7;">)</span>:
+    <span style="color: #2aa1ae;">""" As the following line is indented it belongs to the function add """</span>
+    <span style="color: #7590db;">Ans</span> = x + y
+    <span style="color: #4f97d7; font-weight: bold;">return</span> Ans
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgc94ce81" class="outline-4">
+<h4 id="orgc94ce81">Defining New Functions</h4>
+<div class="outline-text-4" id="text-orgc94ce81">
+<p>
+You can also define your own functions using the template below, to save typing out code more than once.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">function_name</span><span style="color: #4f97d7;">(</span>input_variable<span style="color: #4f97d7;">)</span>:
+    <span style="color: #2aa1ae;">""" Comment describing what the function does """</span>
+    <span style="color: #4f97d7;">[</span>CODEBLOCK<span style="color: #4f97d7;">]</span>
+    <span style="color: #4f97d7; font-weight: bold;">return</span> output_variable
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgc4b661f" class="outline-4">
+<h4 id="orgc4b661f">Syntax Errors</h4>
+<div class="outline-text-4" id="text-orgc4b661f">
+<p>
+Breaking the rules of any language for example incorrect spelling, punctuation or grammar will cause misunderstanding. Python is no exception and will fail to interpret/understand the code you have entered.Syntax Errors are very common (mostly typos) but fortunately they are also easy to find and fix.
+</p>
+<ul class="org-ul">
+<li>When python is unable to understand your code it will do its best to highlight the syntax error.</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/syntax_error.jpg" alt="syntax_error.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The example python code above contains multiple errors.
+<ul class="org-ul">
+<li>print is misspelt Pr0nt (note python is case sensitive)</li>
+<li>the string "Syntax is missing a double quote</li>
+<li>the print function is missing a closing bracket</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+
+<div id="outline-container-org48bf6f0" class="outline-4">
+<h4 id="org48bf6f0">Syntax Table</h4>
+<div class="outline-text-4" id="text-org48bf6f0">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Syntax Table</th>
+<th scope="col" class="org-left">&#xa0;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">#              Comment#</td>
+<td class="org-left">Text for humans ignored by the computer</td>
+</tr>
+
+<tr>
+<td class="org-left">Variable=</td>
+<td class="org-left">A named value that can be changed</td>
+</tr>
+
+<tr>
+<td class="org-left">“String”</td>
+<td class="org-left">A variable that holds "Text"</td>
+</tr>
+
+<tr>
+<td class="org-left">Function( inputs )</td>
+<td class="org-left">A named command() that may take inputs and/or return an output</td>
+</tr>
+
+<tr>
+<td class="org-left">Operators</td>
+<td class="org-left">+ - * / &gt; &lt;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org47b1025" class="outline-3">
+<h3 id="org47b1025">Logic</h3>
+<div class="outline-text-3" id="text-org47b1025">
+<p>
+Frequently an algorithm needs to make a decision; that is selectively run code only if a condition is meet (True).
+</p>
+
+<div id="orge8b746f" class="figure">
+<p><object type="image/svg+xml" data="img/if.svg" class="org-svg" width="70%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 5: </span>if, else if (elif) and else</p>
+</div>
+
+
+<p>
+For example in dressing for according to the weather in python :
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Cold"</span>:
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Wear a jumper and long trousers"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">warm</span>
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Wear shorts"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Wet"</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Windy"</span>:
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">wet and windy</span>
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Raincoat"</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">just wet</span>
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Umbrella"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<div class="note">
+<p>
+Note the double ==
+</p>
+
+</div>
+</div>
+
+
+<div id="outline-container-org7bf375c" class="outline-4">
+<h4 id="org7bf375c">Comparison Operators</h4>
+<div class="outline-text-4" id="text-org7bf375c">
+<p>
+Symbols that compare variables :
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Symbol</th>
+<th scope="col" class="org-left">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">==</td>
+<td class="org-left">Is equal too</td>
+</tr>
+
+<tr>
+<td class="org-left">!=</td>
+<td class="org-left">Is not equal too</td>
+</tr>
+
+<tr>
+<td class="org-left">&lt;=</td>
+<td class="org-left">Less than or equal too</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;=</td>
+<td class="org-left">Greater than or equal too</td>
+</tr>
+
+<tr>
+<td class="org-left">and</td>
+<td class="org-left">TRUE and FALSE = FALSE</td>
+</tr>
+
+<tr>
+<td class="org-left">or</td>
+<td class="org-left">TRUE or  FALSE = TRUE</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>
