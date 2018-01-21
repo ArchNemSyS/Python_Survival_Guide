@@ -101,11 +101,15 @@ print("hello world")
 - When the Python code above is run/executed it is interpreted one line at a time into bytecode instructions that the computer can understand.
 
 ** Syntax    
-Computer Languages [Python] have rules just like human Languages. For example in English a sentence ends in a full stop and starts with a capital letter.
+Computer Languages such as Python have rules just like human Languages. For example in English a sentence starts with a capital letter and ends in a full stop.
 
 #+BEGIN_keyword
 Syntax: The rules of a language
 #+END_keyword 
+
+Breaking the rules of any language for example incorrect spelling, punctuation or grammar renders it incomprehensible.
+- Python is no exception and will fail to interpret/understand the code you have entered.
+- When python is unable to understand your code it will do its best to highlight the [[Syntax Errors][Syntax Errors]].
 
 *** Comments
 Comments are notes added to code to remind programmers what a piece of code does.
@@ -125,7 +129,7 @@ Comments: Always begin with a #
 #+END_note
 
 *** Variables
-Variables are a way of labelling data that is going to used in a our code.
+Variables are a way of labelling data that is going to be used in a our code.
 #+BEGIN_SRC python -i
 name = "Mr Kelly"
 #+END_SRC
@@ -207,15 +211,13 @@ answer = int( input( "Please enter a number : " ) ) + 1
   
 
 *** Functions
-#+BEGIN_keyword 
-Functions are named commands() that may take inputs and/or return an output
-#+END_keyword
+#+CAPTION: Function
+#+NAME: fig.While Loop 
+#+ATTR_HTML: :width 70%
+file:img/Function.svg
 
-#+BEGIN_note
-Functions: always have brackets() after their names 
-#+END_note
-
-Two common functions used in python are print and input:
+Functions are a way of reusing sets of instructions that perform the same task.
+- For example two common functions used in python are print and input:
 #+BEGIN_SRC python -i
 name = input("Please enter your name : ")
 print("hello ", name)
@@ -228,8 +230,38 @@ print("hello ", name)
 - print( "OUTPUT" )
   + takes a "string" and displays it on the screen
 
+#+BEGIN_keyword 
+Functions are named commands() that may take inputs and/or return an output
+#+END_keyword
+
+#+BEGIN_note
+Note Functions always have brackets() after their names 
+#+END_note
+
+*** Defining New Functions
+You can also define your own functions using the syntax below:
+
+#+BEGIN_SRC python -i
+def function_name(input_variable1,input_variable2):
+    """ Comment describing what the function does """
+    CODEBLOCK
+    CODEBLOCK
+    CODEBLOCK
+    return output_variable
+#+END_SRC
+
+#+BEGIN_note
+Whenever you reuse your code it should be in a function...
+#+END_note
+
+#+BEGIN_note
+note the use of : to start an indented codeblock
+#+END_note
 *** Codeblocks / Indentation
-In many high level languages brackets are used to segment code execution into blocks.
+The purpose of a code block is to define statements that will be executed together.
+Codeblocks are needed when code forks, loops or is otherwise referenced or reused.
+
+In many high level languages instructions can be grouped together into blocks using curly brackets {...}.
 #+BEGIN_SRC c++
 int add(int x, int y)
 { // start a block
@@ -239,22 +271,280 @@ int add(int x, int y)
 Python separates code-blocks purely on indentation alone as follows :
 #+BEGIN_SRC python -i
 def add(x,y):
-    """ As the following line is indented it belongs to the function add """
+    """ As the following lines are indented they belong to the add function """
     Ans = x + y
     return Ans
 #+END_SRC
-*** Defining New Functions
-You can also define your own functions using the template below, to save typing out code more than once.
+
+  
+*** Syntax Reference Table
+| Syntax Table            |                                                                |
+|-------------------------+----------------------------------------------------------------|
+| # Comment               | Text for humans ignored by the computer                        |
+| Variable =              | A named value that can be changed                              |
+| “String”                | A variable that holds "Text"                                   |
+| Function( inputs )      | A named command() that may take inputs and/or return an output |
+| Operators               | + plus   - minus   * times   / divide   = assign               |
+
+
+** Logic
+Logic statements allow the programmer to control the flow of a program to repeat or execute codeblocks selectively.
+
+*** Comparison Operators
+Frequently an algorithm needs to compare values (variables) in order make a decision. 
+
+#+BEGIN_note
+Note the result of a comparison operation is always a boolean ( True or False ).
+#+END_note
+
+Python has the following operators to compare variables :
+| Symbol | Operation                 |
+|--------+---------------------------|
+| ==     | Is equal too              |
+| !=     | Is not equal too          |
+| <      | Less than                 |
+| <=     | Less than or equal too    |
+| >      | Greater than              |
+| >=     | Greater than or equal too |
+ 
+
+#+BEGIN_note
+Note the double == means test if the left is equal to the right.
+#+END_note
+
+#+BEGIN_note
+Be careful with the use of  > GREATER THAN and  < LESS THAN it is very easy to mix them up.
+#+END_note
 
 #+BEGIN_SRC python -i
-def function_name(input_variable):
-    """ Comment describing what the function does """
-    [CODEBLOCK]
-    return output_variable
+print(1==1)
+print(1!=2)
+print(1<2)
+print(1>2)
 #+END_SRC
 
+
+*** Boolean Operators
+For many algorithms logic conditions/statements need to be combined. 
+
+Python provides the following boolean operators:
+ | Symbol | Operation              |
+|--------+------------------------|
+| and | TRUE and FALSE = FALSE    |
+| or  | TRUE or  FALSE = TRUE     |
+| not | Inverts Statement Logic   |
+
+#+BEGIN_SRC python -i
+print(True and True)
+print(True and True and False)
+print(True or False or False)
+print(not True)
+#+END_SRC
+
+#+BEGIN_note
+- A single False in a boolean AND statement equates to False.
+- A single True in a boolean OR statement equates to True. 
+#+END_note
+
+
+*** IF Statement
+#+BEGIN_keyword
+IF : Selectively run a codeblock only if a condition is meet (True).
+#+END_keyword 
+
+#+CAPTION: if, else if (elif) and else
+#+NAME: fig.Decomposition 
+#+ATTR_HTML: :width 80%
+file:img/if.svg
+
+
+For example :
+#+BEGIN_SRC python -i
+score = 42
+if score > 80:
+    print("Excellent")
+elif score >= 50
+    print("Well Done")
+else:
+    print("Please Try Again")
+#+END_SRC
+
+*** Loops
+Loops allow us to repeat code according to a condition. Ie:
+
+#+CAPTION: Loops
+#+NAME: fig.While Loop 
+#+ATTR_HTML: :width 50%
+file:img/loops.svg
+
+- Open umbrella while it is raining
+
+- For each student in classroom give candy
+
+- Repeat this instruction 10 times 
+
+**** While Loop
+#+BEGIN_keyword
+While: A statement that repeats a codeblock while the condition is True.
+#+END_keyword 
+
+#+BEGIN_SRC python -i
+weather = "Raining"
+
+while weather == "Raining":
+    print("It is raining, umbrella open")
+
+print("It is no longer raining close umbrella")
+#+END_SRC
+
+note the above will create an [[Infinite Loops][infinite loop]] as weather always == "Raining" 
+
+**** For Loop
+#+BEGIN_keyword
+For : A statement that repeats a codeblock a known number of times. 
+#+END_keyword 
+
+#+BEGIN_SRC python -i
+# The range statement controls the for loops begining termination and step
+# the for loop below begins at 1 terminates at 11 and steps by 1 each loop 
+for i in range(1,11,1):
+    print(i)
+#+END_SRC
+
+#+BEGIN_note
+For loops do not execute their terminal iteration; That is the loop above will print 1..10 not 11   
+#+END_note
+
+**** Recursive Functions 
+Another easy way to loop based on the outcome of a previous calculation/input is to recursively call a function.
+
+For example [[Input Validation][validating user input]] by asking them to repeat an input that couldn't be understood :
+
+#+BEGIN_SRC python -i
+def input_int_min_max(prompt,MIN, MAX):
+    """ Simplified Validation Function to ensure the user enters an integer between min and max"""
+    if(num >= MIN and num <= MAX):
+        return num
+    else:
+        print("INVAILD")
+        return input_int_min_max(prompt,MIN, MAX)
+#+END_SRC
+
+#+BEGIN_keyword
+Recursive Function : A function that calls itself directly or indirectly forming a loop
+#+END_keyword 
+
+
+*** Nested Logic
+For complex problems it is also possible to nest logic statements within each other.
+#+BEGIN_SRC python -i
+if weather == "Wet":
+    if weather == "Windy":
+        # wet and windy
+        print("Take Raincoat")
+    else:
+        # just wet
+        print("Take Umbrella")
+#+END_SRC
+Avoid nesting your code if possible as it makes code more difficult to read and debug, common solutions include:
+
+simplifying boolean statements, for example :
+ 
+use functions for duplicate fork code : 
+
+** Data Structures
+#+BEGIN_keyword
+Data structures are a way to organise related data together with methods to access and manipulate them efficiently.
+#+END_keyword 
+Often a program needs to work with many similar variables such as items, names, groups etc.
+Consider for example a simple program that averages the scores for 30 students:
+#+BEGIN_SRC python -i
+student_score1 = 10
+student_score2 = 20
+student_score3 = 30
+...
+total = student_score1 + student_score2 + ... 
+average = total / 30
+#+END_SRC
+Although the above would solve the average, it has limitations:
+- The code above will only work for exactly 30 students.
+- Coding without data containers would be more time consuming rewriting very similar instructions.
+- The programmer is very likely to make mistakes. 
+
+
+*** Sequence Data Structures
+Python sequences (strings, lists tuples) are ordered data structures that allow a single identifier to index more than one value.
+
+#+CAPTION: Sequence of length 4
+#+NAME: fig.Arrays 
+#+ATTR_HTML: :width 50%
+file:img/array.svg
+
+**** Python Strings
+A string is specialized data structure to hold a sequence of characters.
+A character is simply a symbol such as the letters of the English language (Python, string is a sequence of Unicode encoded characters) . 
+
+#+BEGIN_note
+Note unlike other languages python :
+- doesen't have a char type, just a string of a single char
+- strings are immutable, can not be edited
+#+END_note
+
+Updating Strings
+You can "update" an existing string by (re)assigning a variable to another string.
+
+**** Python Lists and Tuples
+Unlike strings that contain only characters, list and tuples can contain any type of objects
+
+The previous averaging problem can be solved using a list data structure:
+#+BEGIN_SRC python -i
+# sum : total the values of each item in the list
+# len : count the number of values held in the list
+listValues = [10,20,30,40]
+average = sum(listValues) / len(listValues)
+#+END_SRC
+- This solution will work for any number of students and is much easier and less error prone for the programmer.
+   
+#+BEGIN_note
+- Note unlike other language python uses link lists for its data structures (most languages use congruent and adjacent arrays). 
+- As Python is dynamicly typed Language items in a list need not be of the same type.
+#+END_note
+
+
+List deletion
+
+***** Nested lists
+
+
+***** Strings and lists
+
+
+** File I/O
+binary and text ...
+
+*** Read
+*** Write
+*** Append
+
+*** Parsing 
+
+
+** SQL
+Server Query Language ... really is a book worthy topic 
+CRUD
+
+** Handling Errors 
+Murphy's law Anything that can go wrong will go wrong
+
+*** Maintainability / Robustness 
+- Comments / indentation
+- Naming conventions
+- Coding style
+- Documentation
+- Modules 
+
 *** Syntax Errors
-Breaking the rules of any language for example incorrect spelling, punctuation or grammar will cause misunderstanding. Python is no exception and will fail to interpret/understand the code you have entered.Syntax Errors are very common (mostly typos) but fortunately they are also easy to find and fix.
+Syntax errors are the result of breaking the rules of the python language such as spelling, punctuation etc.
 - When python is unable to understand your code it will do its best to highlight the syntax error.
 [[file:img/syntax_error.jpg]]
 - The example python code above contains multiple errors.
@@ -262,53 +552,149 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
   + the string "Syntax is missing a double quote   
   + the print function is missing a closing bracket 
 
-  
-*** Syntax Table
-
-| Syntax Table            |                                                                |
-|-------------------------+----------------------------------------------------------------|
-| #              Comment# | Text for humans ignored by the computer                        |
-| Variable=               | A named value that can be changed                              |
-| “String”                | A variable that holds "Text"                                   |
-| Function( inputs )      | A named command() that may take inputs and/or return an output |
-| Operators               | + - * / > <                                                    |
-
-
-** Logic
-Frequently an algorithm needs to make a decision; that is selectively run code only if a condition is meet (True).
-#+CAPTION: if, else if (elif) and else
-#+NAME: fig.Decomposition 
-#+ATTR_HTML: :width 70%
-file:img/if.svg
-
-
-For example in dressing for according to the weather in python :
+*** Logic Error 
+code runs but produces incorrect output	
+**** Infinite Loops
+Infinite loops are a type of logic error where by a program loops through a codeblock endlessly.  
+There are three common causes of infinite loops:
+- resetting the conditional variable incorrectly
 #+BEGIN_SRC python -i
-if weather == "Cold":
-    print("Wear a jumper and long trousers")
-else:
-    # warm
-    print("Wear shorts")
-if weather == "Wet":
-    if weather == "Windy":
-        # wet and windy
-        print("Take Raincoat")
-    else:
-    # just wet
-    print("Take Umbrella")
+num = 1
+while num > 0:
+    num = 10
+# This will loop forever as num is reset within the loop.
 #+END_SRC
+
+- incorrect comparison operator
+#+BEGIN_SRC python -i
+num = 0
+while num < 0:
+    num = num - 1
+# This will loop forever as num will always be Less than zero.
+# the programmer either intended to use > Greater than or for num to increment 
+#+END_SRC
+- unbreakable condition
+#+BEGIN_SRC python -i
+while True:
+# This will always loop as the condition is True.
+# This loop can only be broken with the use of a Break statement 
+#+END_SRC
+alternatively in the case of recursive functions
+#+BEGIN_SRC python -i
+def recursive_fun():
+    return recursive_fun()
+# This function calls itself directly without a breakable condition
+# Be careful this can also happen indirectly with many functions calling each other.
+#+END_SRC
+*** Run Time Error
+Using an undeclared variable or indexing out of range 
+
+**** exception handling
+When an error occurs in python it terminates the current instruction and raises an exception.
+If the exception isn't handled by the program it is terminated and an error message is output to the shell.
+
+Therefore if you have some code that may raise an exception (opening files/networks, user input) 
+you should place the code in a try except block.
+
+#+BEGIN_SRC python -i
+try:
+  doSomething() # that may crash
+except: 
+  # doSomething() has caused a crash so
+  do_something_else()
+else:
+  # doSomething() is good so
+  save()
+#+END_SRC
+
+The codeblock between the try and except is first executed.
+If no exception occurs, the except clause is skipped and the optional else codeblock is executed.
+
+**** Input Validation
+It is sound programming practice to protect your program from invalid and malicious input.
+
 #+BEGIN_note
-Note the double ==
+Accepting invalid input is a cause of run time errors and is also a security concern.
 #+END_note
 
 
-*** Comparison Operators
-Symbols that compare variables :
-| Symbol | Operation              |
-|--------+------------------------|
-| ==  | Is equal too              |
-| !=  | Is not equal too          |
-| <=  | Less than or equal too    |
-| >=  | Greater than or equal too |
-| and | TRUE and FALSE = FALSE    |
-| or  | TRUE or  FALSE = TRUE     |
+
+Data type validation :
+#+BEGIN_SRC python -i
+def input_int():
+    try:
+        number = int(input("INPUT NUMBER \n : "))
+    except:
+        print("Input Invalid Please enter a whole number in the format 10")
+        input_int()
+    else:
+        return number
+#+END_SRC
+
+Range validation
+#+BEGIN_SRC python -i
+def int_min_max(num, MIN, MAX):
+    if(num >= MIN and num <= MAX):
+        return num
+    else:
+        return None
+#+END_SRC
+
+Constraint validation
+#+BEGIN_SRC python -i
+def yes_or_no():
+    user_choice = ""
+    while user_choice not in ["yes","no"]:
+        user_choice = input("yes or no").lower()  
+    return user_choice   
+#+END_SRC
+*** Debugging 
+#+BEGIN_keyword
+Debugging: The process of identify and correcting the cause of an error
+#+END_keyword 
+
+Although the python interpreter does its best to inform the user as to cause of a crash (such as dividing by zero) in complex programs it is often unclear what the cause of the error was (ie why and where did the program divide by zero).
+
+However depending on your IDE (integrated development environment) a python programmer has many tools at their disposal for example [[https://www.cs.uky.edu/~keen/help/debug-tutorial/debug.html][idle]] has its own debugger.
+http://winpdb.org/
+
+This guide will detail the use of Pythons debugger module, pdb.
+
+**** Tracing 
+Tracing is a debugging technique where by a programmer follows the execution of their code line by line. As this can be a tedious process in larger programs, programmers often start a trace at a point of interest in their code rather the beginning.
+
+ A debugging tool makes this easy to do, by allowing you to execute your program line by line, querying the values of variables along the way.
+
+
+#+BEGIN_SRC python -i
+# Firslty import the pdb module at the top of your python file
+import pdb
+
+# ... clean code that we know works ...
+
+# Next to begin a trace, insert the following code above the line of interest:
+pdb.set_trace()
+
+#+END_SRC
+
+Python will execute the program as normal until it encounters pdb.set_trace().
+Python will then pause execution, display the next line that will be executed and wait for your command.
+
+Pdb offers the following commands to inspect the current state of the paused program :
+| Command | Operation                 |
+|--------+---------------------------|
+| n         | Execute the next statement |
+| p var     | Print the current value of var |
+| l      | where am I (list current statements) |
+| c      | stop debugging run normally until next pdb.set_trace()  |
+| r      | stop debugging run normally untilnext return |
+| q    | quit |
+
+
+** Advanced
+*** OOP in Python
+
+
+
+
+
