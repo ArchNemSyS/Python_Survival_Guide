@@ -536,13 +536,6 @@ CRUD
 ** Handling Errors 
 Murphy's law Anything that can go wrong will go wrong
 
-*** Maintainability / Robustness 
-- Comments / indentation
-- Naming conventions
-- Coding style
-- Documentation
-- Modules 
-
 *** Syntax Errors
 Syntax errors are the result of breaking the rules of the python language such as spelling, punctuation etc.
 - When python is unable to understand your code it will do its best to highlight the syntax error.
@@ -552,8 +545,14 @@ Syntax errors are the result of breaking the rules of the python language such a
   + the string "Syntax is missing a double quote   
   + the print function is missing a closing bracket 
 
+#+BEGIN_keyword
+Syntax Error : The code cannot be interpreted as it violates the rules of the language	 
+#+END_keyword 
 *** Logic Error 
-code runs but produces incorrect output	
+#+BEGIN_keyword
+Logic Error : The code runs but produces the incorrect output for some or all input(s)	 
+#+END_keyword 
+
 **** Infinite Loops
 Infinite loops are a type of logic error where by a program loops through a codeblock endlessly.  
 There are three common causes of infinite loops:
@@ -587,6 +586,10 @@ def recursive_fun():
 # Be careful this can also happen indirectly with many functions calling each other.
 #+END_SRC
 *** Run Time Error
+#+BEGIN_keyword
+Run Time Error : The code fails during execution  	 
+#+END_keyword 
+
 Using an undeclared variable or indexing out of range 
 
 **** exception handling
@@ -610,7 +613,7 @@ else:
 The codeblock between the try and except is first executed.
 If no exception occurs, the except clause is skipped and the optional else codeblock is executed.
 
-**** Input Validation
+*** Input Validation
 It is sound programming practice to protect your program from invalid and malicious input.
 
 #+BEGIN_note
@@ -689,6 +692,20 @@ Pdb offers the following commands to inspect the current state of the paused pro
 | c      | stop debugging run normally until next pdb.set_trace()  |
 | r      | stop debugging run normally untilnext return |
 | q    | quit |
+
+*** Maintainability / Robustness 
+The following are considered good programming practice and are essential in ensuring that every program is robust and maintainable:  
+- Coding style and naming convention
+  + To the greatest extent possible write code that is Pythonic and literal.
+  + Module,Classes,Functions and Variables all need consistent meaningful names.
+  + (KEEP IT SIMPLE STUPID) good python code reads almost like English.  
+- Comments 
+  + Concise meaningful comments are best, little and often
+- Functions
+  + If you ever copy and paste code ask yourself should this be a function or a class?
+  + have I simplified/modelled the problem properly ?   
+- Modules 
+  + Don't write absolutely everything into one huge python file, use separate modules for larger projects and reusable components.  
 
 
 ** Advanced

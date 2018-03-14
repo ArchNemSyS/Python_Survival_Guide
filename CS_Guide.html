@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2017-09-26 Tue 20:31 -->
+<!-- 2018-03-14 Wed 21:35 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>The Computer Science Survival Guide - Taming Python</title>
@@ -91,38 +91,70 @@ org_html_manager.setup();  // activate after the parameters are set
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#org6cdf9e5">Computational Thinking</a>
+<li><a href="#orgdc01ab2">Computational Thinking</a>
 <ul>
-<li><a href="#orga7ac958">Step1: Decomposition</a></li>
-<li><a href="#orgfaf7a5d">Step2: Pattern Recognition</a></li>
-<li><a href="#orgc90501d">Step3: Abstraction</a></li>
-<li><a href="#org8538ed3">Step4: Algorithms</a>
+<li><a href="#orge5d8fe5">Step1: Decomposition</a></li>
+<li><a href="#orgee76d01">Step2: Pattern Recognition</a></li>
+<li><a href="#orge94c4bf">Step3: Abstraction</a></li>
+<li><a href="#orgb73d2a6">Step4: Algorithms</a>
 <ul>
-<li><a href="#orgfd37867">Flowchart Shapes</a></li>
+<li><a href="#orgbea2486">Flowchart Shapes</a></li>
 </ul>
 </li>
-<li><a href="#orgc2e2e03">What is Programming/Coding</a></li>
+<li><a href="#orgd1bcec8">What is Programming/Coding</a></li>
 </ul>
 </li>
-<li><a href="#org76ffb39">Python</a>
+<li><a href="#org1a8663d">Python</a>
 <ul>
-<li><a href="#org9e56b0f">Syntax</a>
+<li><a href="#org7413e5b">Syntax</a>
 <ul>
-<li><a href="#org8bed7ef">Comments</a></li>
-<li><a href="#orgdb3ca79">Variables</a></li>
-<li><a href="#org20f9775">Operators</a></li>
-<li><a href="#org3678d71">Data Types</a></li>
-<li><a href="#org3e5384e">Type Conversion/Casting</a></li>
-<li><a href="#org058186f">Functions</a></li>
-<li><a href="#orge08e3e8">Codeblocks / Indentation</a></li>
-<li><a href="#orgc94ce81">Defining New Functions</a></li>
-<li><a href="#orgc4b661f">Syntax Errors</a></li>
-<li><a href="#org48bf6f0">Syntax Table</a></li>
+<li><a href="#orgdf963bf">Comments</a></li>
+<li><a href="#org119eae3">Variables</a></li>
+<li><a href="#orgad87821">Operators</a></li>
+<li><a href="#org7be2ae6">Data Types</a></li>
+<li><a href="#orgcb3be0a">Type Conversion/Casting</a></li>
+<li><a href="#org23aa232">Functions</a></li>
+<li><a href="#org9c054e7">Defining New Functions</a></li>
+<li><a href="#orgacdd1dc">Codeblocks / Indentation</a></li>
+<li><a href="#org88c0b37">Syntax Reference Table</a></li>
 </ul>
 </li>
-<li><a href="#org47b1025">Logic</a>
+<li><a href="#org40d6d05">Logic</a>
 <ul>
-<li><a href="#org7bf375c">Comparison Operators</a></li>
+<li><a href="#org438aa1d">Comparison Operators</a></li>
+<li><a href="#orge5991db">Boolean Operators</a></li>
+<li><a href="#org30f9c3f">IF Statement</a></li>
+<li><a href="#org7a72ef4">Loops</a></li>
+<li><a href="#org3aaa478">Nested Logic</a></li>
+</ul>
+</li>
+<li><a href="#org593e2f5">Data Structures</a>
+<ul>
+<li><a href="#orgf1897f5">Sequence Data Structures</a></li>
+</ul>
+</li>
+<li><a href="#org3f5468e">File I/O</a>
+<ul>
+<li><a href="#org90efa43">Read</a></li>
+<li><a href="#org03e7fa3">Write</a></li>
+<li><a href="#org5824086">Append</a></li>
+<li><a href="#orgbb6a6a7">Parsing</a></li>
+</ul>
+</li>
+<li><a href="#org72f8054">SQL</a></li>
+<li><a href="#org1d0bfa3">Handling Errors</a>
+<ul>
+<li><a href="#org8e24ef9">Syntax Errors</a></li>
+<li><a href="#org6c5c240">Logic Error</a></li>
+<li><a href="#org8f938d3">Run Time Error</a></li>
+<li><a href="#org78ce5d7">Input Validation</a></li>
+<li><a href="#orgcad9e08">Debugging</a></li>
+<li><a href="#org3a38216">Maintainability / Robustness</a></li>
+</ul>
+</li>
+<li><a href="#orgd3827ea">Advanced</a>
+<ul>
+<li><a href="#org3fdc911">OOP in Python</a></li>
 </ul>
 </li>
 </ul>
@@ -131,9 +163,9 @@ org_html_manager.setup();  // activate after the parameters are set
 </div>
 </div>
 
-<div id="outline-container-org6cdf9e5" class="outline-2">
-<h2 id="org6cdf9e5">Computational Thinking</h2>
-<div class="outline-text-2" id="text-org6cdf9e5">
+<div id="outline-container-orgdc01ab2" class="outline-2">
+<h2 id="orgdc01ab2">Computational Thinking</h2>
+<div class="outline-text-2" id="text-orgdc01ab2">
 <div class="keyword">
 <p>
 Computational thinking is the skill of converting a complex problem into many simple, solvable solutions.
@@ -146,16 +178,16 @@ Computational thinking is the skill of converting a complex problem into many si
 </ul>
 </div>
 
-<div id="outline-container-orga7ac958" class="outline-3">
-<h3 id="orga7ac958">Step1: Decomposition</h3>
-<div class="outline-text-3" id="text-orga7ac958">
+<div id="outline-container-orge5d8fe5" class="outline-3">
+<h3 id="orge5d8fe5">Step1: Decomposition</h3>
+<div class="outline-text-3" id="text-orge5d8fe5">
 <ul class="org-ul">
 <li>Firstly take the complex problem and break it down into finite states or actions.</li>
 <li>Then take each of these individual smaller problems and check that they can not be broken down further.</li>
 </ul>
 
 
-<div id="org65bb26f" class="figure">
+<div id="org03a8343" class="figure">
 <p><object type="image/svg+xml" data="img/decomposition.svg" class="org-svg" width="70%">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -164,9 +196,9 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgfaf7a5d" class="outline-3">
-<h3 id="orgfaf7a5d">Step2: Pattern Recognition</h3>
-<div class="outline-text-3" id="text-orgfaf7a5d">
+<div id="outline-container-orgee76d01" class="outline-3">
+<h3 id="orgee76d01">Step2: Pattern Recognition</h3>
+<div class="outline-text-3" id="text-orgee76d01">
 <p>
 Once we have decomposed complex problems we often find  find patterns among the smaller problems we create. 
 The patterns are similarities or characteristics that some of the problems share.   
@@ -194,9 +226,9 @@ Finding these patterns allows us to better abstract like elements from the compl
 </div>
 </div>
 
-<div id="outline-container-orgc90501d" class="outline-3">
-<h3 id="orgc90501d">Step3: Abstraction</h3>
-<div class="outline-text-3" id="text-orgc90501d">
+<div id="outline-container-orge94c4bf" class="outline-3">
+<h3 id="orge94c4bf">Step3: Abstraction</h3>
+<div class="outline-text-3" id="text-orge94c4bf">
 <p>
 For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
 </p>
@@ -214,9 +246,9 @@ The vending machine abstracted
 </div>
 </div>
 
-<div id="outline-container-org8538ed3" class="outline-3">
-<h3 id="org8538ed3">Step4: Algorithms</h3>
-<div class="outline-text-3" id="text-org8538ed3">
+<div id="outline-container-orgb73d2a6" class="outline-3">
+<h3 id="orgb73d2a6">Step4: Algorithms</h3>
+<div class="outline-text-3" id="text-orgb73d2a6">
 <div class="keyword">
 <p>
 An algorithm is a simple set of steps to solve a problem.
@@ -240,7 +272,7 @@ Almost all problems simplify into three stages:
 
 
 
-<div id="org7e5ec61" class="figure">
+<div id="org4ca481c" class="figure">
 <p><object type="image/svg+xml" data="img/algorithim.svg" class="org-svg" width="80%">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -248,11 +280,11 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgfd37867" class="outline-4">
-<h4 id="orgfd37867">Flowchart Shapes</h4>
-<div class="outline-text-4" id="text-orgfd37867">
+<div id="outline-container-orgbea2486" class="outline-4">
+<h4 id="orgbea2486">Flowchart Shapes</h4>
+<div class="outline-text-4" id="text-orgbea2486">
 
-<div id="org7bce696" class="figure">
+<div id="orgb755cc7" class="figure">
 <p><img src="img/REPLACEME.png" alt="REPLACEME.png" width="80%" />
 </p>
 <p><span class="figure-number">Figure 3: </span>Flowchart Shapes.</p>
@@ -261,9 +293,9 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-orgc2e2e03" class="outline-3">
-<h3 id="orgc2e2e03">What is Programming/Coding</h3>
-<div class="outline-text-3" id="text-orgc2e2e03">
+<div id="outline-container-orgd1bcec8" class="outline-3">
+<h3 id="orgd1bcec8">What is Programming/Coding</h3>
+<div class="outline-text-3" id="text-orgd1bcec8">
 <ul class="org-ul">
 <li>Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.</li>
 <li>To run an algorithim on a computer it needs to be coded into very explicit binary instructions like 11100110.</li>
@@ -273,9 +305,9 @@ Sorry, your browser does not support SVG.</object>
 </div>
 </div>
 
-<div id="outline-container-org76ffb39" class="outline-2">
-<h2 id="org76ffb39">Python</h2>
-<div class="outline-text-2" id="text-org76ffb39">
+<div id="outline-container-org1a8663d" class="outline-2">
+<h2 id="org1a8663d">Python</h2>
+<div class="outline-text-2" id="text-org1a8663d">
 <ul class="org-ul">
 <li>Python is a high level English like programming language</li>
 <li>look at the following python example :</li>
@@ -291,11 +323,11 @@ Sorry, your browser does not support SVG.</object>
 </ul>
 </div>
 
-<div id="outline-container-org9e56b0f" class="outline-3">
-<h3 id="org9e56b0f">Syntax</h3>
-<div class="outline-text-3" id="text-org9e56b0f">
+<div id="outline-container-org7413e5b" class="outline-3">
+<h3 id="org7413e5b">Syntax</h3>
+<div class="outline-text-3" id="text-org7413e5b">
 <p>
-Computer Languages [Python] have rules just like human Languages. For example in English a sentence ends in a full stop and starts with a capital letter.
+Computer Languages such as Python have rules just like human Languages. For example in English a sentence starts with a capital letter and ends in a full stop.
 </p>
 
 <div class="keyword">
@@ -304,11 +336,19 @@ Syntax: The rules of a language
 </p>
 
 </div>
+
+<p>
+Breaking the rules of any language for example incorrect spelling, punctuation or grammar renders it incomprehensible.
+</p>
+<ul class="org-ul">
+<li>Python is no exception and will fail to interpret/understand the code you have entered.</li>
+<li>When python is unable to understand your code it will do its best to highlight the <a href="#org8e24ef9">Syntax Errors</a>.</li>
+</ul>
 </div>
 
-<div id="outline-container-org8bed7ef" class="outline-4">
-<h4 id="org8bed7ef">Comments</h4>
-<div class="outline-text-4" id="text-org8bed7ef">
+<div id="outline-container-orgdf963bf" class="outline-4">
+<h4 id="orgdf963bf">Comments</h4>
+<div class="outline-text-4" id="text-orgdf963bf">
 <p>
 Comments are notes added to code to remind programmers what a piece of code does.
 In python a hash character # will begin a comment that extends to the end of the line.
@@ -336,11 +376,11 @@ Comments: Always begin with a #
 </div>
 </div>
 
-<div id="outline-container-orgdb3ca79" class="outline-4">
-<h4 id="orgdb3ca79">Variables</h4>
-<div class="outline-text-4" id="text-orgdb3ca79">
+<div id="outline-container-org119eae3" class="outline-4">
+<h4 id="org119eae3">Variables</h4>
+<div class="outline-text-4" id="text-org119eae3">
 <p>
-Variables are a way of labelling data that is going to used in a our code.
+Variables are a way of labelling data that is going to be used in a our code.
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #2d9574;">"Mr Kelly"</span>
@@ -371,9 +411,9 @@ Variables = are always set after they are named
 </div>
 </div>
 
-<div id="outline-container-org20f9775" class="outline-4">
-<h4 id="org20f9775">Operators</h4>
-<div class="outline-text-4" id="text-org20f9775">
+<div id="outline-container-orgad87821" class="outline-4">
+<h4 id="orgad87821">Operators</h4>
+<div class="outline-text-4" id="text-orgad87821">
 <p>
 Operators are symbols that change the value of a variable :
 </p>
@@ -439,9 +479,9 @@ Operators are symbols that change the value of a variable :
 </div>
 </div>
 
-<div id="outline-container-org3678d71" class="outline-4">
-<h4 id="org3678d71">Data Types</h4>
-<div class="outline-text-4" id="text-org3678d71">
+<div id="outline-container-org7be2ae6" class="outline-4">
+<h4 id="org7be2ae6">Data Types</h4>
+<div class="outline-text-4" id="text-org7be2ae6">
 <p>
 A data type describes how data within a variable is stored.
 </p>
@@ -505,9 +545,9 @@ print()
 </div>
 </div>
 
-<div id="outline-container-org3e5384e" class="outline-4">
-<h4 id="org3e5384e">Type Conversion/Casting</h4>
-<div class="outline-text-4" id="text-org3e5384e">
+<div id="outline-container-orgcb3be0a" class="outline-4">
+<h4 id="orgcb3be0a">Type Conversion/Casting</h4>
+<div class="outline-text-4" id="text-orgcb3be0a">
 <p>
 When using operators we frequently need to cast variables into compatible types.
 </p>
@@ -570,26 +610,23 @@ When using operators we frequently need to cast variables into compatible types.
 </div>
 
 
-<div id="outline-container-org058186f" class="outline-4">
-<h4 id="org058186f">Functions</h4>
-<div class="outline-text-4" id="text-org058186f">
-<div class="keyword">
-<p>
-Functions are named commands() that may take inputs and/or return an output
+<div id="outline-container-org23aa232" class="outline-4">
+<h4 id="org23aa232">Functions</h4>
+<div class="outline-text-4" id="text-org23aa232">
+
+<div id="org3ee6601" class="figure">
+<p><object type="image/svg+xml" data="img/Function.svg" class="org-svg" width="70%">
+Sorry, your browser does not support SVG.</object>
 </p>
-
-</div>
-
-<div class="note">
-<p>
-Functions: always have brackets() after their names 
-</p>
-
+<p><span class="figure-number">Figure 4: </span>Function</p>
 </div>
 
 <p>
-Two common functions used in python are print and input:
+Functions are a way of reusing sets of instructions that perform the same task.
 </p>
+<ul class="org-ul">
+<li>For example two common functions used in python are print and input:</li>
+</ul>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #7590db;">name</span> = <span style="color: #4f97d7;">input</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Please enter your name : "</span><span style="color: #4f97d7;">)</span>
 <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"hello "</span>, name<span style="color: #4f97d7;">)</span>
@@ -608,14 +645,65 @@ Two common functions used in python are print and input:
 <li>takes a "string" and displays it on the screen</li>
 </ul></li>
 </ul>
+
+<div class="keyword">
+<p>
+Functions are named commands() that may take inputs and/or return an output
+</p>
+
+</div>
+
+<div class="note">
+<p>
+Note Functions always have brackets() after their names 
+</p>
+
+</div>
 </div>
 </div>
 
-<div id="outline-container-orge08e3e8" class="outline-4">
-<h4 id="orge08e3e8">Codeblocks / Indentation</h4>
-<div class="outline-text-4" id="text-orge08e3e8">
+<div id="outline-container-org9c054e7" class="outline-4">
+<h4 id="org9c054e7">Defining New Functions</h4>
+<div class="outline-text-4" id="text-org9c054e7">
 <p>
-In many high level languages brackets are used to segment code execution into blocks.
+You can also define your own functions using the syntax below:
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">function_name</span><span style="color: #4f97d7;">(</span>input_variable1,input_variable2<span style="color: #4f97d7;">)</span>:
+    <span style="color: #2aa1ae;">""" Comment describing what the function does """</span>
+    CODEBLOCK
+    CODEBLOCK
+    CODEBLOCK
+    <span style="color: #4f97d7; font-weight: bold;">return</span> output_variable
+</pre>
+</div>
+
+<div class="note">
+<p>
+Whenever you reuse your code it should be in a function&#x2026;
+</p>
+
+</div>
+
+<div class="note">
+<p>
+note the use of : to start an indented codeblock
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-orgacdd1dc" class="outline-4">
+<h4 id="orgacdd1dc">Codeblocks / Indentation</h4>
+<div class="outline-text-4" id="text-orgacdd1dc">
+<p>
+The purpose of a code block is to define statements that will be executed together.
+Codeblocks are needed when code forks, loops or is otherwise referenced or reused.
+</p>
+
+<p>
+In many high level languages instructions can be grouped together into blocks using curly brackets {&#x2026;}.
 </p>
 <div class="org-src-container">
 <pre class="src src-c++"><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #bc6ec5; font-weight: bold;">add</span><span style="color: #4f97d7;">(</span><span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">x</span>, <span style="color: #ce537a; font-weight: bold;">int</span> <span style="color: #7590db;">y</span><span style="color: #4f97d7;">)</span>
@@ -629,59 +717,18 @@ Python separates code-blocks purely on indentation alone as follows :
 </p>
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">add</span><span style="color: #4f97d7;">(</span>x,y<span style="color: #4f97d7;">)</span>:
-    <span style="color: #2aa1ae;">""" As the following line is indented it belongs to the function add """</span>
+    <span style="color: #2aa1ae;">""" As the following lines are indented they belong to the add function """</span>
     <span style="color: #7590db;">Ans</span> = x + y
     <span style="color: #4f97d7; font-weight: bold;">return</span> Ans
 </pre>
 </div>
 </div>
 </div>
-<div id="outline-container-orgc94ce81" class="outline-4">
-<h4 id="orgc94ce81">Defining New Functions</h4>
-<div class="outline-text-4" id="text-orgc94ce81">
-<p>
-You can also define your own functions using the template below, to save typing out code more than once.
-</p>
-
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">function_name</span><span style="color: #4f97d7;">(</span>input_variable<span style="color: #4f97d7;">)</span>:
-    <span style="color: #2aa1ae;">""" Comment describing what the function does """</span>
-    <span style="color: #4f97d7;">[</span>CODEBLOCK<span style="color: #4f97d7;">]</span>
-    <span style="color: #4f97d7; font-weight: bold;">return</span> output_variable
-</pre>
-</div>
-</div>
-</div>
-
-<div id="outline-container-orgc4b661f" class="outline-4">
-<h4 id="orgc4b661f">Syntax Errors</h4>
-<div class="outline-text-4" id="text-orgc4b661f">
-<p>
-Breaking the rules of any language for example incorrect spelling, punctuation or grammar will cause misunderstanding. Python is no exception and will fail to interpret/understand the code you have entered.Syntax Errors are very common (mostly typos) but fortunately they are also easy to find and fix.
-</p>
-<ul class="org-ul">
-<li>When python is unable to understand your code it will do its best to highlight the syntax error.</li>
-</ul>
-
-<div class="figure">
-<p><img src="img/syntax_error.jpg" alt="syntax_error.jpg" />
-</p>
-</div>
-<ul class="org-ul">
-<li>The example python code above contains multiple errors.
-<ul class="org-ul">
-<li>print is misspelt Pr0nt (note python is case sensitive)</li>
-<li>the string "Syntax is missing a double quote</li>
-<li>the print function is missing a closing bracket</li>
-</ul></li>
-</ul>
-</div>
-</div>
 
 
-<div id="outline-container-org48bf6f0" class="outline-4">
-<h4 id="org48bf6f0">Syntax Table</h4>
-<div class="outline-text-4" id="text-org48bf6f0">
+<div id="outline-container-org88c0b37" class="outline-4">
+<h4 id="org88c0b37">Syntax Reference Table</h4>
+<div class="outline-text-4" id="text-org88c0b37">
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
 
@@ -698,12 +745,12 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
 </thead>
 <tbody>
 <tr>
-<td class="org-left">#              Comment#</td>
+<td class="org-left"># Comment</td>
 <td class="org-left">Text for humans ignored by the computer</td>
 </tr>
 
 <tr>
-<td class="org-left">Variable=</td>
+<td class="org-left">Variable =</td>
 <td class="org-left">A named value that can be changed</td>
 </tr>
 
@@ -719,7 +766,7 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
 
 <tr>
 <td class="org-left">Operators</td>
-<td class="org-left">+ - * / &gt; &lt;</td>
+<td class="org-left">+ plus   - minus   * times   / divide   = assign</td>
 </tr>
 </tbody>
 </table>
@@ -728,53 +775,30 @@ Breaking the rules of any language for example incorrect spelling, punctuation o
 </div>
 
 
-<div id="outline-container-org47b1025" class="outline-3">
-<h3 id="org47b1025">Logic</h3>
-<div class="outline-text-3" id="text-org47b1025">
+<div id="outline-container-org40d6d05" class="outline-3">
+<h3 id="org40d6d05">Logic</h3>
+<div class="outline-text-3" id="text-org40d6d05">
 <p>
-Frequently an algorithm needs to make a decision; that is selectively run code only if a condition is meet (True).
+Logic statements allow the programmer to control the flow of a program to repeat or execute codeblocks selectively.
 </p>
-
-<div id="orge8b746f" class="figure">
-<p><object type="image/svg+xml" data="img/if.svg" class="org-svg" width="70%">
-Sorry, your browser does not support SVG.</object>
-</p>
-<p><span class="figure-number">Figure 5: </span>if, else if (elif) and else</p>
 </div>
 
-
+<div id="outline-container-org438aa1d" class="outline-4">
+<h4 id="org438aa1d">Comparison Operators</h4>
+<div class="outline-text-4" id="text-org438aa1d">
 <p>
-For example in dressing for according to the weather in python :
+Frequently an algorithm needs to compare values (variables) in order make a decision. 
 </p>
-<div class="org-src-container">
-<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Cold"</span>:
-    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Wear a jumper and long trousers"</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">else</span>:
-    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">warm</span>
-    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Wear shorts"</span><span style="color: #4f97d7;">)</span>
-<span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Wet"</span>:
-    <span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Windy"</span>:
-        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">wet and windy</span>
-        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Raincoat"</span><span style="color: #4f97d7;">)</span>
-    <span style="color: #4f97d7; font-weight: bold;">else</span>:
-    <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">just wet</span>
-    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Umbrella"</span><span style="color: #4f97d7;">)</span>
-</pre>
-</div>
+
 <div class="note">
 <p>
-Note the double ==
+Note the result of a comparison operation is always a boolean ( True or False ).
 </p>
 
 </div>
-</div>
 
-
-<div id="outline-container-org7bf375c" class="outline-4">
-<h4 id="org7bf375c">Comparison Operators</h4>
-<div class="outline-text-4" id="text-org7bf375c">
 <p>
-Symbols that compare variables :
+Python has the following operators to compare variables :
 </p>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 
@@ -802,15 +826,78 @@ Symbols that compare variables :
 </tr>
 
 <tr>
+<td class="org-left">&lt;</td>
+<td class="org-left">Less than</td>
+</tr>
+
+<tr>
 <td class="org-left">&lt;=</td>
 <td class="org-left">Less than or equal too</td>
+</tr>
+
+<tr>
+<td class="org-left">&gt;</td>
+<td class="org-left">Greater than</td>
 </tr>
 
 <tr>
 <td class="org-left">&gt;=</td>
 <td class="org-left">Greater than or equal too</td>
 </tr>
+</tbody>
+</table>
 
+
+<div class="note">
+<p>
+Note the double == means test if the left is equal to the right.
+</p>
+
+</div>
+
+<div class="note">
+<p>
+Be careful with the use of  &gt; GREATER THAN and  &lt; LESS THAN it is very easy to mix them up.
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>==<span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>!=<span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>&lt;<span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>&gt;<span style="color: #a45bad;">2</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orge5991db" class="outline-4">
+<h4 id="orge5991db">Boolean Operators</h4>
+<div class="outline-text-4" id="text-orge5991db">
+<p>
+For many algorithms logic conditions/statements need to be combined. 
+</p>
+
+<p>
+Python provides the following boolean operators:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Symbol</th>
+<th scope="col" class="org-left">Operation</th>
+</tr>
+</thead>
+<tbody>
 <tr>
 <td class="org-left">and</td>
 <td class="org-left">TRUE and FALSE = FALSE</td>
@@ -820,9 +907,686 @@ Symbols that compare variables :
 <td class="org-left">or</td>
 <td class="org-left">TRUE or  FALSE = TRUE</td>
 </tr>
+
+<tr>
+<td class="org-left">not</td>
+<td class="org-left">Inverts Statement Logic</td>
+</tr>
 </tbody>
 </table>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">True</span> <span style="color: #4f97d7; font-weight: bold;">and</span> <span style="color: #a45bad;">True</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">True</span> <span style="color: #4f97d7; font-weight: bold;">and</span> <span style="color: #a45bad;">True</span> <span style="color: #4f97d7; font-weight: bold;">and</span> <span style="color: #a45bad;">False</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">True</span> <span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #a45bad;">False</span> <span style="color: #4f97d7; font-weight: bold;">or</span> <span style="color: #a45bad;">False</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7; font-weight: bold;">not</span> <span style="color: #a45bad;">True</span><span style="color: #4f97d7;">)</span>
+</pre>
 </div>
+
+<div class="note">
+<ul class="org-ul">
+<li>A single False in a boolean AND statement equates to False.</li>
+<li>A single True in a boolean OR statement equates to True.</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-org30f9c3f" class="outline-4">
+<h4 id="org30f9c3f">IF Statement</h4>
+<div class="outline-text-4" id="text-org30f9c3f">
+<div class="keyword">
+<p>
+IF : Selectively run a codeblock only if a condition is meet (True).
+</p>
+
+</div>
+
+
+<div id="org0c09ee5" class="figure">
+<p><object type="image/svg+xml" data="img/if.svg" class="org-svg" width="80%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 5: </span>if, else if (elif) and else</p>
+</div>
+
+
+<p>
+For example :
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">score</span> = <span style="color: #a45bad;">42</span>
+<span style="color: #4f97d7; font-weight: bold;">if</span> score &gt; <span style="color: #a45bad;">80</span>:
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Excellent"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">elif</span> score &gt;= <span style="color: #a45bad;">50</span>
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Well Done"</span><span style="color: #4f97d7;">)</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>:
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Please Try Again"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7a72ef4" class="outline-4">
+<h4 id="org7a72ef4">Loops</h4>
+<div class="outline-text-4" id="text-org7a72ef4">
+<p>
+Loops allow us to repeat code according to a condition. Ie:
+</p>
+
+
+<div id="orgb2d79ec" class="figure">
+<p><object type="image/svg+xml" data="img/loops.svg" class="org-svg" width="50%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 6: </span>Loops</p>
+</div>
+
+<ul class="org-ul">
+<li>Open umbrella while it is raining</li>
+
+<li>For each student in classroom give candy</li>
+
+<li>Repeat this instruction 10 times</li>
+</ul>
+</div>
+
+<ul class="org-ul"><li><a id="org7d47559"></a>While Loop<br /><div class="outline-text-5" id="text-org7d47559">
+<div class="keyword">
+<p>
+While: A statement that repeats a codeblock while the condition is True.
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">weather</span> = <span style="color: #2d9574;">"Raining"</span>
+
+<span style="color: #4f97d7; font-weight: bold;">while</span> weather == <span style="color: #2d9574;">"Raining"</span>:
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"It is raining, umbrella open"</span><span style="color: #4f97d7;">)</span>
+
+<span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"It is no longer raining close umbrella"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<p>
+note the above will create an <a href="#org1b4eba4">infinite loop</a> as weather always == "Raining" 
+</p>
+</div></li>
+
+<li><a id="org258f4b7"></a>For Loop<br /><div class="outline-text-5" id="text-org258f4b7">
+<div class="keyword">
+<p>
+For : A statement that repeats a codeblock a known number of times. 
+</p>
+
+</div>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">The range statement controls the for loops begining termination and step</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">the for loop below begins at 1 terminates at 11 and steps by 1 each loop </span>
+<span style="color: #4f97d7; font-weight: bold;">for</span> i <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">range</span><span style="color: #4f97d7;">(</span><span style="color: #a45bad;">1</span>,<span style="color: #a45bad;">11</span>,<span style="color: #a45bad;">1</span><span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span>i<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<div class="note">
+<p>
+For loops do not execute their terminal iteration; That is the loop above will print 1..10 not 11   
+</p>
+
+</div>
+</div></li>
+
+<li><a id="orge385ef6"></a>Recursive Functions<br /><div class="outline-text-5" id="text-orge385ef6">
+<p>
+Another easy way to loop based on the outcome of a previous calculation/input is to recursively call a function.
+</p>
+
+<p>
+For example <a href="#org78ce5d7">validating user input</a> by asking them to repeat an input that couldn't be understood :
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">input_int_min_max</span><span style="color: #4f97d7;">(</span>prompt,MIN, MAX<span style="color: #4f97d7;">)</span>:
+    <span style="color: #2aa1ae;">""" Simplified Validation Function to ensure the user enters an integer between min and max"""</span>
+    <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #4f97d7;">(</span>num &gt;= MIN <span style="color: #4f97d7; font-weight: bold;">and</span> num &lt;= MAX<span style="color: #4f97d7;">)</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> num
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"INVAILD"</span><span style="color: #4f97d7;">)</span>
+        <span style="color: #4f97d7; font-weight: bold;">return</span> input_int_min_max<span style="color: #4f97d7;">(</span>prompt,MIN, MAX<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+
+<div class="keyword">
+<p>
+Recursive Function : A function that calls itself directly or indirectly forming a loop
+</p>
+
+</div>
+</div></li></ul>
+</div>
+
+
+<div id="outline-container-org3aaa478" class="outline-4">
+<h4 id="org3aaa478">Nested Logic</h4>
+<div class="outline-text-4" id="text-org3aaa478">
+<p>
+For complex problems it is also possible to nest logic statements within each other.
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Wet"</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span> weather == <span style="color: #2d9574;">"Windy"</span>:
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">wet and windy</span>
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Raincoat"</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">just wet</span>
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Take Umbrella"</span><span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<p>
+Avoid nesting your code if possible as it makes code more difficult to read and debug, common solutions include:
+</p>
+
+<p>
+simplifying boolean statements, for example :
+</p>
+
+<p>
+use functions for duplicate fork code : 
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org593e2f5" class="outline-3">
+<h3 id="org593e2f5">Data Structures</h3>
+<div class="outline-text-3" id="text-org593e2f5">
+<div class="keyword">
+<p>
+Data structures are a way to organise related data together with methods to access and manipulate them efficiently.
+</p>
+
+</div>
+<p>
+Often a program needs to work with many similar variables such as items, names, groups etc.
+Consider for example a simple program that averages the scores for 30 students:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">student_score1</span> = <span style="color: #a45bad;">10</span>
+<span style="color: #7590db;">student_score2</span> = <span style="color: #a45bad;">20</span>
+<span style="color: #7590db;">student_score3</span> = <span style="color: #a45bad;">30</span>
+...
+<span style="color: #7590db;">total</span> = student_score1 + student_score2 + ... 
+<span style="color: #7590db;">average</span> = total / <span style="color: #a45bad;">30</span>
+</pre>
+</div>
+<p>
+Although the above would solve the average, it has limitations:
+</p>
+<ul class="org-ul">
+<li>The code above will only work for exactly 30 students.</li>
+<li>Coding without data containers would be more time consuming rewriting very similar instructions.</li>
+<li>The programmer is very likely to make mistakes.</li>
+</ul>
+</div>
+
+
+<div id="outline-container-orgf1897f5" class="outline-4">
+<h4 id="orgf1897f5">Sequence Data Structures</h4>
+<div class="outline-text-4" id="text-orgf1897f5">
+<p>
+Python sequences (strings, lists tuples) are ordered data structures that allow a single identifier to index more than one value.
+</p>
+
+
+<div id="org74adc7e" class="figure">
+<p><object type="image/svg+xml" data="img/array.svg" class="org-svg" width="50%">
+Sorry, your browser does not support SVG.</object>
+</p>
+<p><span class="figure-number">Figure 7: </span>Sequence of length 4</p>
+</div>
+</div>
+
+<ul class="org-ul"><li><a id="org8d4b1f0"></a>Python Strings<br /><div class="outline-text-5" id="text-org8d4b1f0">
+<p>
+A string is specialized data structure to hold a sequence of characters.
+A character is simply a symbol such as the letters of the English language (Python, string is a sequence of Unicode encoded characters) . 
+</p>
+
+<div class="note">
+<p>
+Note unlike other languages python :
+</p>
+<ul class="org-ul">
+<li>doesen't have a char type, just a string of a single char</li>
+<li>strings are immutable, can not be edited</li>
+</ul>
+
+</div>
+
+<p>
+Updating Strings
+You can "update" an existing string by (re)assigning a variable to another string.
+</p>
+</div></li>
+
+<li><a id="org6f514b9"></a>Python Lists and Tuples<br /><div class="outline-text-5" id="text-org6f514b9">
+<p>
+Unlike strings that contain only characters, list and tuples can contain any type of objects
+</p>
+
+<p>
+The previous averaging problem can be solved using a list data structure:
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">sum : total the values of each item in the list</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">len : count the number of values held in the list</span>
+<span style="color: #7590db;">listValues</span> = <span style="color: #4f97d7;">[</span><span style="color: #a45bad;">10</span>,<span style="color: #a45bad;">20</span>,<span style="color: #a45bad;">30</span>,<span style="color: #a45bad;">40</span><span style="color: #4f97d7;">]</span>
+<span style="color: #7590db;">average</span> = <span style="color: #4f97d7;">sum</span><span style="color: #4f97d7;">(</span>listValues<span style="color: #4f97d7;">)</span> / <span style="color: #4f97d7;">len</span><span style="color: #4f97d7;">(</span>listValues<span style="color: #4f97d7;">)</span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>This solution will work for any number of students and is much easier and less error prone for the programmer.</li>
+</ul>
+
+<div class="note">
+<ul class="org-ul">
+<li>Note unlike other language python uses link lists for its data structures (most languages use congruent and adjacent arrays).</li>
+<li>As Python is dynamicly typed Language items in a list need not be of the same type.</li>
+</ul>
+
+</div>
+
+
+<p>
+List deletion
+</p>
+</div>
+
+<ul class="org-ul"><li><a id="org2e29778"></a>Nested lists<br /></li>
+
+
+<li><a id="orgd275937"></a>Strings and lists<br /></li></ul></li></ul>
+</div>
+</div>
+
+
+<div id="outline-container-org3f5468e" class="outline-3">
+<h3 id="org3f5468e">File I/O</h3>
+<div class="outline-text-3" id="text-org3f5468e">
+<p>
+binary and text &#x2026;
+</p>
+</div>
+
+<div id="outline-container-org90efa43" class="outline-4">
+<h4 id="org90efa43">Read</h4>
+</div>
+<div id="outline-container-org03e7fa3" class="outline-4">
+<h4 id="org03e7fa3">Write</h4>
+</div>
+<div id="outline-container-org5824086" class="outline-4">
+<h4 id="org5824086">Append</h4>
+</div>
+
+<div id="outline-container-orgbb6a6a7" class="outline-4">
+<h4 id="orgbb6a6a7">Parsing</h4>
+</div>
+</div>
+
+
+<div id="outline-container-org72f8054" class="outline-3">
+<h3 id="org72f8054">SQL</h3>
+<div class="outline-text-3" id="text-org72f8054">
+<p>
+Server Query Language &#x2026; really is a book worthy topic 
+CRUD
+</p>
+</div>
+</div>
+
+<div id="outline-container-org1d0bfa3" class="outline-3">
+<h3 id="org1d0bfa3">Handling Errors</h3>
+<div class="outline-text-3" id="text-org1d0bfa3">
+<p>
+Murphy's law Anything that can go wrong will go wrong
+</p>
+</div>
+
+<div id="outline-container-org8e24ef9" class="outline-4">
+<h4 id="org8e24ef9">Syntax Errors</h4>
+<div class="outline-text-4" id="text-org8e24ef9">
+<p>
+Syntax errors are the result of breaking the rules of the python language such as spelling, punctuation etc.
+</p>
+<ul class="org-ul">
+<li>When python is unable to understand your code it will do its best to highlight the syntax error.</li>
+</ul>
+
+<div class="figure">
+<p><img src="img/syntax_error.jpg" alt="syntax_error.jpg" />
+</p>
+</div>
+<ul class="org-ul">
+<li>The example python code above contains multiple errors.
+<ul class="org-ul">
+<li>print is misspelt Pr0nt (note python is case sensitive)</li>
+<li>the string "Syntax is missing a double quote</li>
+<li>the print function is missing a closing bracket</li>
+</ul></li>
+</ul>
+
+<div class="keyword">
+<p>
+Syntax Error : The code cannot be interpreted as it violates the rules of the language	 
+</p>
+
+</div>
+</div>
+</div>
+<div id="outline-container-org6c5c240" class="outline-4">
+<h4 id="org6c5c240">Logic Error</h4>
+<div class="outline-text-4" id="text-org6c5c240">
+<div class="keyword">
+<p>
+Logic Error : The code runs but produces the incorrect output for some or all input(s)	 
+</p>
+
+</div>
+</div>
+
+<ul class="org-ul"><li><a id="org1b4eba4"></a>Infinite Loops<br /><div class="outline-text-5" id="text-org1b4eba4">
+<p>
+Infinite loops are a type of logic error where by a program loops through a codeblock endlessly.  
+There are three common causes of infinite loops:
+</p>
+<ul class="org-ul">
+<li>resetting the conditional variable incorrectly</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">num</span> = <span style="color: #a45bad;">1</span>
+<span style="color: #4f97d7; font-weight: bold;">while</span> num &gt; <span style="color: #a45bad;">0</span>:
+    <span style="color: #7590db;">num</span> = <span style="color: #a45bad;">10</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This will loop forever as num is reset within the loop.</span>
+</pre>
+</div>
+
+<ul class="org-ul">
+<li>incorrect comparison operator</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #7590db;">num</span> = <span style="color: #a45bad;">0</span>
+<span style="color: #4f97d7; font-weight: bold;">while</span> num &lt; <span style="color: #a45bad;">0</span>:
+    <span style="color: #7590db;">num</span> = num - <span style="color: #a45bad;">1</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This will loop forever as num will always be Less than zero.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">the programmer either intended to use &gt; Greater than or for num to increment </span>
+</pre>
+</div>
+<ul class="org-ul">
+<li>unbreakable condition</li>
+</ul>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">while</span> <span style="color: #a45bad;">True</span>:
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This will always loop as the condition is True.</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This loop can only be broken with the use of a Break statement </span>
+</pre>
+</div>
+<p>
+alternatively in the case of recursive functions
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">recursive_fun</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">return</span> recursive_fun<span style="color: #4f97d7;">()</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">This function calls itself directly without a breakable condition</span>
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Be careful this can also happen indirectly with many functions calling each other.</span>
+</pre>
+</div>
+</div></li></ul>
+</div>
+<div id="outline-container-org8f938d3" class="outline-4">
+<h4 id="org8f938d3">Run Time Error</h4>
+<div class="outline-text-4" id="text-org8f938d3">
+<div class="keyword">
+<p>
+Run Time Error : The code fails during execution  	 
+</p>
+
+</div>
+
+<p>
+Using an undeclared variable or indexing out of range 
+</p>
+</div>
+
+<ul class="org-ul"><li><a id="orgda91ed7"></a>exception handling<br /><div class="outline-text-5" id="text-orgda91ed7">
+<p>
+When an error occurs in python it terminates the current instruction and raises an exception.
+If the exception isn't handled by the program it is terminated and an error message is output to the shell.
+</p>
+
+<p>
+Therefore if you have some code that may raise an exception (opening files/networks, user input) 
+you should place the code in a try except block.
+</p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">try</span>:
+  doSomething<span style="color: #4f97d7;">()</span> <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">that may crash</span>
+<span style="color: #4f97d7; font-weight: bold;">except</span>: 
+  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">doSomething() has caused a crash so</span>
+  do_something_else<span style="color: #4f97d7;">()</span>
+<span style="color: #4f97d7; font-weight: bold;">else</span>:
+  <span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">doSomething() is good so</span>
+  save<span style="color: #4f97d7;">()</span>
+</pre>
+</div>
+
+<p>
+The codeblock between the try and except is first executed.
+If no exception occurs, the except clause is skipped and the optional else codeblock is executed.
+</p>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org78ce5d7" class="outline-4">
+<h4 id="org78ce5d7">Input Validation</h4>
+<div class="outline-text-4" id="text-org78ce5d7">
+<p>
+It is sound programming practice to protect your program from invalid and malicious input.
+</p>
+
+<div class="note">
+<p>
+Accepting invalid input is a cause of run time errors and is also a security concern.
+</p>
+
+</div>
+
+
+
+<p>
+Data type validation :
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">input_int</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #4f97d7; font-weight: bold;">try</span>:
+        <span style="color: #7590db;">number</span> = <span style="color: #4f97d7;">int</span><span style="color: #4f97d7;">(</span><span style="color: #4f97d7;">input</span><span style="color: #bc6ec5;">(</span><span style="color: #2d9574;">"INPUT NUMBER \n : "</span><span style="color: #bc6ec5;">)</span><span style="color: #4f97d7;">)</span>
+    <span style="color: #4f97d7; font-weight: bold;">except</span>:
+        <span style="color: #4f97d7; font-weight: bold;">print</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"Input Invalid Please enter a whole number in the format 10"</span><span style="color: #4f97d7;">)</span>
+        input_int<span style="color: #4f97d7;">()</span>
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> number
+</pre>
+</div>
+
+<p>
+Range validation
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">int_min_max</span><span style="color: #4f97d7;">(</span>num, MIN, MAX<span style="color: #4f97d7;">)</span>:
+    <span style="color: #4f97d7; font-weight: bold;">if</span><span style="color: #4f97d7;">(</span>num &gt;= MIN <span style="color: #4f97d7; font-weight: bold;">and</span> num &lt;= MAX<span style="color: #4f97d7;">)</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> num
+    <span style="color: #4f97d7; font-weight: bold;">else</span>:
+        <span style="color: #4f97d7; font-weight: bold;">return</span> <span style="color: #a45bad;">None</span>
+</pre>
+</div>
+
+<p>
+Constraint validation
+</p>
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #4f97d7; font-weight: bold;">def</span> <span style="color: #bc6ec5; font-weight: bold;">yes_or_no</span><span style="color: #4f97d7;">()</span>:
+    <span style="color: #7590db;">user_choice</span> = <span style="color: #2d9574;">""</span>
+    <span style="color: #4f97d7; font-weight: bold;">while</span> user_choice <span style="color: #4f97d7; font-weight: bold;">not</span> <span style="color: #4f97d7; font-weight: bold;">in</span> <span style="color: #4f97d7;">[</span><span style="color: #2d9574;">"yes"</span>,<span style="color: #2d9574;">"no"</span><span style="color: #4f97d7;">]</span>:
+        <span style="color: #7590db;">user_choice</span> = <span style="color: #4f97d7;">input</span><span style="color: #4f97d7;">(</span><span style="color: #2d9574;">"yes or no"</span><span style="color: #4f97d7;">)</span>.lower<span style="color: #4f97d7;">()</span>  
+    <span style="color: #4f97d7; font-weight: bold;">return</span> user_choice   
+</pre>
+</div>
+</div>
+</div>
+<div id="outline-container-orgcad9e08" class="outline-4">
+<h4 id="orgcad9e08">Debugging</h4>
+<div class="outline-text-4" id="text-orgcad9e08">
+<div class="keyword">
+<p>
+Debugging: The process of identify and correcting the cause of an error
+</p>
+
+</div>
+
+<p>
+Although the python interpreter does its best to inform the user as to cause of a crash (such as dividing by zero) in complex programs it is often unclear what the cause of the error was (ie why and where did the program divide by zero).
+</p>
+
+<p>
+However depending on your IDE (integrated development environment) a python programmer has many tools at their disposal for example <a href="https://www.cs.uky.edu/~keen/help/debug-tutorial/debug.html">idle</a> has its own debugger.
+<a href="http://winpdb.org/">http://winpdb.org/</a>
+</p>
+
+<p>
+This guide will detail the use of Pythons debugger module, pdb.
+</p>
+</div>
+
+<ul class="org-ul"><li><a id="orgee28487"></a>Tracing<br /><div class="outline-text-5" id="text-orgee28487">
+<p>
+Tracing is a debugging technique where by a programmer follows the execution of their code line by line. As this can be a tedious process in larger programs, programmers often start a trace at a point of interest in their code rather the beginning.
+</p>
+
+<p>
+A debugging tool makes this easy to do, by allowing you to execute your program line by line, querying the values of variables along the way.
+</p>
+
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Firslty import the pdb module at the top of your python file</span>
+<span style="color: #4f97d7; font-weight: bold;">import</span> pdb
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">... clean code that we know works ...</span>
+
+<span style="color: #2aa1ae; background-color: #292e34;"># </span><span style="color: #2aa1ae; background-color: #292e34;">Next to begin a trace, insert the following code above the line of interest:</span>
+pdb.set_trace<span style="color: #4f97d7;">()</span>
+
+</pre>
+</div>
+
+<p>
+Python will execute the program as normal until it encounters pdb.set_trace().
+Python will then pause execution, display the next line that will be executed and wait for your command.
+</p>
+
+<p>
+Pdb offers the following commands to inspect the current state of the paused program :
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Command</th>
+<th scope="col" class="org-left">Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">n</td>
+<td class="org-left">Execute the next statement</td>
+</tr>
+
+<tr>
+<td class="org-left">p var</td>
+<td class="org-left">Print the current value of var</td>
+</tr>
+
+<tr>
+<td class="org-left">l</td>
+<td class="org-left">where am I (list current statements)</td>
+</tr>
+
+<tr>
+<td class="org-left">c</td>
+<td class="org-left">stop debugging run normally until next pdb.set_trace()</td>
+</tr>
+
+<tr>
+<td class="org-left">r</td>
+<td class="org-left">stop debugging run normally untilnext return</td>
+</tr>
+
+<tr>
+<td class="org-left">q</td>
+<td class="org-left">quit</td>
+</tr>
+</tbody>
+</table>
+</div></li></ul>
+</div>
+
+<div id="outline-container-org3a38216" class="outline-4">
+<h4 id="org3a38216">Maintainability / Robustness</h4>
+<div class="outline-text-4" id="text-org3a38216">
+<p>
+The following are considered good programming practice and are essential in ensuring that every program is robust and maintainable:  
+</p>
+<ul class="org-ul">
+<li>Coding style and naming convention
+<ul class="org-ul">
+<li>To the greatest extent possible write code that is Pythonic and literal.</li>
+<li>Module,Classes,Functions and Variables all need consistent meaningful names.</li>
+<li>(KEEP IT SIMPLE STUPID) good python code reads almost like English.</li>
+</ul></li>
+<li>Comments 
+<ul class="org-ul">
+<li>Concise meaningful comments are best, little and often</li>
+</ul></li>
+<li>Functions
+<ul class="org-ul">
+<li>If you ever copy and paste code ask yourself should this be a function or a class?</li>
+<li>have I simplified/modelled the problem properly ?</li>
+</ul></li>
+<li>Modules 
+<ul class="org-ul">
+<li>Don't write absolutely everything into one huge python file, use separate modules for larger projects and reusable components.</li>
+</ul></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+<div id="outline-container-orgd3827ea" class="outline-3">
+<h3 id="orgd3827ea">Advanced</h3>
+<div class="outline-text-3" id="text-orgd3827ea">
+</div><div id="outline-container-org3fdc911" class="outline-4">
+<h4 id="org3fdc911">OOP in Python</h4>
 </div>
 </div>
 </div>
