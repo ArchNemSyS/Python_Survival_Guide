@@ -19,71 +19,97 @@
 #+LATEX_HEADER: \usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
 #+LATEX_HEADER: \newenvironment{keyword}{\color{red}}{\ignorespacesafterend}
 #+LATEX_HEADER: \newenvironment{note}{\color{blue}}{\ignorespacesafterend}
+* Preface
+This book is my small repayment on the debt of wealth of knowledge made openly available to all.
 
+Dedicated to the many great teachers and students I have had honour to learn from without whom this book would not be possible.
+
+None of us are as talented as all of use together.
+
+Jonathan Kelly
 * Computational Thinking
-#+BEGIN_keyword
-Computational thinking is the skill of converting a complex problem into many simple, solvable solutions.
-#+END_keyword
-- Thinking computationally is not programming! 
-- The answer a computer can provide is only as good as the question that is first asked of it.
+Although this guide is largely dedicated to programming specifically python; 
+Computer Science at its core is the study of thinking machines and how to use them to solve problems.
 
+Unfortunately complex problems cannot be directly understood by thinking machines and therefore much of a computer scientists time is spent 
+investigating them using computational thinking.  
+
+#+BEGIN_keyword
+Computational thinking : the steps to convert a complex problem into simple, solvable solutions.
+#+END_keyword
+Computational thinking is not programming, rather a program is often the end solution to a problem.   
+Remember the answer a thinking machine (human or computer) can provide is only as good as the question that is first asked of it !
 ** Step1: Decomposition 
-- Firstly take the complex problem and break it down into finite states or actions.
+- Firstly take the complex problem and break it down into steps (finite states or actions).
 - Then take each of these individual smaller problems and check that they can not be broken down further.
 
-#+CAPTION: For example consider a vending machine (a complex problem)
+#+CAPTION: For example consider a vending machine broken down in steps
 #+NAME: fig.Decomposition 
 #+ATTR_HTML: :width 70%
 file:img/decomposition.svg
 
 ** Step2: Pattern Recognition
-Once we have decomposed complex problems we often find  find patterns among the smaller problems we create. 
-The patterns are similarities or characteristics that some of the problems share.   
+Once we have decomposed a complex problem into steps we often find useful patterns.
 
 We look for:
-- Problems that repeat/loop
+- Steps that repeat/loop
 - Objects that have similar characteristics
 
 Referring back to the vending machine example:
-- inserting the money and displaying a balance would likely loop.
-- items for sale in the vending machine would likely have a cost and description but others be treated similarly.
+- inserting money and displaying a balance would likely loop.
+- items for sale in the vending machine would likely have a cost and description but would others be treated similarly.
 
-Finding these patterns allows us to better abstract like elements from the complex problem and solve it more efficiently.  
+Finding these patterns allows us to simplify like elements.  
 
 ** Step3: Abstraction
-For each individual problem note the important details outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
+For each individual step note only the important details.
+Outline the entities (nouns) and their actions (verbs), ignore information not absolutely essential to the problem.
 
-The vending machine abstracted
-- the user inserts <inputs> currency
-- the user makes <inputs> a selection from a menu or a refund
-- the machine [processes] if the user can afford the selected item
-- the machine calculates [processes] the change
-- the machine <outputs> the paid item and change
+The vending machine steps abstracted:
+- the user inserts currency
+- the user makes a selection from a menu or a refund
+- the machine calculates if the user can afford the selected item
+- the machine calculates the change or refund
+- the machine vends the paid item and change
+
+Abstractions helps us identify what information is important to solving the problem and how it might be modeled by thinking machines.
 
 ** Step4: Algorithms
+Algorithms are the final result of computational thinking. 
+An algorithim describes the exact steps a thinking machine must follow to solve a problem. 
 #+BEGIN_keyword
-An algorithm is a simple set of steps to solve a problem.
+Algorithm is a simple set of steps to solve a problem.
 #+END_keyword
 
-- Algorithims are the final result of computational thinking.
-- For each of the individual problems provide simple step by step solutions. 
-
-Almost all problems simplify into three stages: 
-  + Input   : enter values/entities (nouns) 
-  + Process : do a calculation or decision (verbs)
-  + Output  : print answer to the screen/file (nouns)
-
+Algorithms follow strict rules so than any thinking machine could follow the steps and get the same result.   
 
 #+CAPTION: Algorithms are written as pseudocode and flowcharts. 
 #+NAME: fig.Algorithm
 #+ATTR_HTML: :width 80%
 file:img/algorithim.svg
 
-*** Flowchart Shapes
+
+as either flowcharts or pseudocode,
+
+*** Writing Algorithms
+Almost all problems simplify into three stages: 
++ Input   : enter values/entities  
++ Process : do a calculation or decision 
++ Output  : print answer to the screen/file 
+
+**** Flowchart 
 #+CAPTION: Flowchart Shapes. 
 #+NAME: fig.flowchart shapes
 #+ATTR_HTML: :width 80%
 [[file:img/REPLACEME.png]]
+
+**** Pseudocode 
+A list of step English like instructions...
+
+The exact version of pseudocode used varies from one institution to another so you should familiarize yourself with ...  
+
+don't stress if you find pseudocode difficult to read after a little coding it will become second nature.
+
 
 ** What is Programming/Coding
 - Programming or coding is the process of entering the steps of an algorithim (instructions) into a computer.  
@@ -285,7 +311,6 @@ def add(x,y):
 | “String”                | A variable that holds "Text"                                   |
 | Function( inputs )      | A named command() that may take inputs and/or return an output |
 | Operators               | + plus   - minus   * times   / divide   = assign               |
-
 
 ** Logic
 Logic statements allow the programmer to control the flow of a program to repeat or execute codeblocks selectively.
